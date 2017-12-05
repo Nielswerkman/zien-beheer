@@ -2,11 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { InternshipComponent } from './internship/internship.component';
-import { StudentComponent } from './student/student.component';
-import { BlogComponent } from './blog/blog.component';
-import { InstitutionComponent } from './institution/institution.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { InternshipComponent } from '../components/internship/internship.component';
+import { StudentComponent } from '../components/student/student.component';
+import { BlogComponent } from '../components/blog/blog.component';
+import { InstitutionComponent } from '../components/institution/institution.component';
+import { SidebarComponent } from '../components/sidebar/sidebar.component';
+import {routing} from 'app/app.routes';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     SidebarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

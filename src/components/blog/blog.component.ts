@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+//import {Router} from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  constructor(/*private router: Router*/) { }
 
   ngOnInit() {
   }
