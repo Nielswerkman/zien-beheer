@@ -1,0 +1,36 @@
+html, body {
+    font-family: Arial;
+    height: 100%;
+}
+
+#content {
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #663366;
+    height: 100%;
+}
+
+nav {
+    padding: 2em;
+}
+
+#nav-header {
+    font-size: 2em;
+    color: white;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 1px 3px #524d43;
+}
+
+.nav-item a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0px 1px 3px #524d43;
+}
+
+.nav-item a:hover {
+    color: #524d43;
+}
