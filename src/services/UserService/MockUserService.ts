@@ -1,7 +1,7 @@
 import {IUserService} from './IUserService';
 import {User} from '../../models/user';
 
-export class MockUserService implements IUserService {
+export class MockUserService {
   private Users: User[] = [];
 
   constructor() {

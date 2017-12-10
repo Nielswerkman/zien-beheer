@@ -25,8 +25,7 @@ export class User {
   getName() {
     if (this.infix == null || this.infix === '' || this.infix.length === 0) {
       return this.firstName + ' ' + this.lastName;
-    } else {
-      return this.firstName + ' ' + this.infix + ' ' + this.lastName;
     }
+    return this.firstName + ' ' + this.infix + ' ' + this.lastName;
   }
 }
