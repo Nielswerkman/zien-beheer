@@ -26,6 +26,7 @@ export class Internship {
   user: User;
 
 
+
   constructor(id: number, blog: Blog, active: boolean, rejected: boolean, title: string, summary: string, summaryImage: string, content: string, contentImage: string, creator: User, date: Date, startDate: Date, endDate: Date, school: School, semester: number, user: User) {
     this.id = id;
     this.blog = blog;
