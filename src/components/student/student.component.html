@@ -1,3 +1,43 @@
-<p>
-  student works!
-</p>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="container">
+  <h1>Studenten</h1>
+
+  <p>
+    Op de pagina is een hoop meuk te zien.
+  </p>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Naam</th>
+      <th>Opleiding</th>
+      <th>Email</th>
+      <th>Acties</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let s of this.users">
+      <td>{{s.id}}</td>
+      <td>{{s.getName()}}</td>
+      <td>{{s.study}}</td>
+      <td>{{s.email}}</td>
+      <td>
+        <a [routerLink]="['/student/edit', s.id]" class="btn-link">
+          <i class="fa fa-pencil"></i>
+        </a>
+      </td>
+      <td>
+        <a [routerLink]="['/student/remove', s.id]" class="btn-link">
+
+          <i class="fa fa-trash"></i>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

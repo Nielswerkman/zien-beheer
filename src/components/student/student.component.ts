@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MockUserService} from '../../services/UserService/MockUserService';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-student',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
+  public users: User[] = [];
 
-  constructor() { }
+  constructor(private userDB: MockUserService) {
+    this.users = userDB.getAll();
+  }
 
   ngOnInit() {
   }
-
 }
