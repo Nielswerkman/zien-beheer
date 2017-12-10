@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+#page-title {
+    margin-top: 1em;
+    color: #663366;
+    text-shadow: 0px 0.5px 3px #524d43;
+    letter-spacing: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#page-content {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #524d43
+}
+
+#instructions {
+    list-style: square;
+}
+
+.table thead {
+    color: #663366;
+}
