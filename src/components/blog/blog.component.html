@@ -24,7 +24,11 @@
         <td>{{blog.creator.firstName + ' ' + blog.creator.infix + ' ' + blog.creator.lastName}}</td>
         <td>{{blog.title}}</td>
         <td>{{blog.date}}</td>
-        <td>X V 0</td>
+        <td>
+          <a [routerLink]="['/blog/accept']"><i class="fa fa-check"></i></a> 
+          <a [routerLink]="['/blog/reject']"><i class="fa fa-trash"></i></a>
+          <a [routerLink]="['/blog/show']"><i class="fa fa-eye"></i></a>
+        </td>
       </tr>
     </tbody>
   </table>
