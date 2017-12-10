@@ -6,8 +6,8 @@ import {StudentComponent} from '../components/student/student.component';
 
 
 const APP_ROUTES: Routes = [
-  {path: '', component: BlogComponent, pathMatch: 'full'},
-  {path: 'blog', component: BlogComponent, pathMatch: 'full'},
+  {path: '', component: BlogComponent},
+  {path: 'blog', component: BlogComponent},
   {path: 'institution', component: InstitutionComponent},
   {path: 'internship', component: InternshipComponent},
   {path: 'student', component: StudentComponent},
