@@ -17,4 +17,18 @@ export class HttpClientService {
 
         return this.http.get(url, { headers: headers });
     }
+
+    post(url){
+        const headers = new Headers();
+        this.authorize(headers);
+
+        return this.http.post(url, {headers: headers});
+    }
+
+    put(url){
+        const headers = new Headers();
+        this.authorize(headers);
+
+        return this.http.put(url, {headers: headers});
+    }
 }
