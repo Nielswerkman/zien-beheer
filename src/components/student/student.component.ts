@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MockUserService} from '../../services/UserService/MockUserService';
 import {User} from '../../models/user';
+import {LiveUserService} from '../../services/UserService/LiveUserService';
 
 @Component({
   selector: 'app-student',
@@ -10,8 +11,8 @@ import {User} from '../../models/user';
 export class StudentComponent implements OnInit {
   public users: User[] = [];
 
-  constructor(private userDB: MockUserService) {
-    this.users = userDB.getAll();
+  constructor(public userDB: LiveUserService) {
+    userDB.getAll().subscribe(result => this.users = result);
   }
 
   ngOnInit() {

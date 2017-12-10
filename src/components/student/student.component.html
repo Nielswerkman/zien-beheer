@@ -1,9 +1,5 @@
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
 <div class="container">
-  <h1>Studenten</h1>
+  <h1 id="page-title">Studenten</h1>
 
   <p>
     Op de pagina is een hoop meuk te zien.
@@ -23,7 +19,7 @@
     <tbody>
     <tr *ngFor="let s of this.users">
       <td>{{s.id}}</td>
-      <td>{{s.getName()}}</td>
+      <td>{{s.firstName}} {{s.infix}} {{s.lastName}}</td>
       <td>{{s.study}}</td>
       <td>{{s.email}}</td>
       <td>

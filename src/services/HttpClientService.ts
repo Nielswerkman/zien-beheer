@@ -31,4 +31,11 @@ export class HttpClientService {
 
         return this.http.put(url, {headers: headers});
     }
+
+    login(url){
+        const headers = new Headers();
+        this.authorize(headers);
+
+        return this.http.post(url, {headers: headers});
+    }
 }
