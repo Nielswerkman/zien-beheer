@@ -13,5 +13,13 @@
         <th>Acties</th>
       </tr>
     </thead>
+    <tbody>
+      <tr *ngFor="let institution in institutions">
+        <td>{{institution.id}}</td>
+        <td>{{institution.name}}</td>
+        <td>{{institution.city}}, {{institution.country}}</td>
+        <td>E D</td>
+      </tr>
+    </tbody>
   </table>
 </div>
