@@ -1,6 +1,6 @@
 import {Blog} from './blog';
 import {User} from './user';
-import {School} from './school';
+import {Institution} from './institution';
 
 export class Internship {
   id: number;
@@ -21,13 +21,13 @@ export class Internship {
   startDate: Date;
   endDate: Date;
 
-  school: School;
+  institution: Institution;
   semester: number;
   user: User;
 
 
 
-  constructor(id: number, blog: Blog, active: boolean, rejected: boolean, title: string, summary: string, summaryImage: string, content: string, contentImage: string, creator: User, date: Date, startDate: Date, endDate: Date, school: School, semester: number, user: User) {
+  constructor(id: number, blog: Blog, active: boolean, rejected: boolean, title: string, summary: string, summaryImage: string, content: string, contentImage: string, creator: User, date: Date, startDate: Date, endDate: Date, institution: Institution, semester: number, user: User) {
     this.id = id;
     this.blog = blog;
     this.active = active;
@@ -41,7 +41,7 @@ export class Internship {
     this.date = date;
     this.startDate = startDate;
     this.endDate = endDate;
-    this.school = school;
+    this.institution = institution;
     this.semester = semester;
     this.user = user;
   }

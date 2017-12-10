@@ -1,4 +1,4 @@
-export class School {
+export class Institution {
   active: boolean;
   city: string;
   country: string;

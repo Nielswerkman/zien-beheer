@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @Component({
   selector: 'app-institution',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InstitutionComponent implements OnInit {
 
-  constructor() { }
+  private institutions: Institution[];
+
+  constructor(private institutionService: LiveInstitutionService) { }
 
   ngOnInit() {
+    this.institutionService.getAll().subscribe(res => {
+      this.institutions = res,
+      console.log(Institution);
+    })
   }
 
 }

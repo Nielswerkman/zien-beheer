@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
+import { Internship } from 'models/Internship';
 
 @Component({
   selector: 'app-internship',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InternshipComponent implements OnInit {
 
-  constructor() { }
+  private internships: Internship[];
+
+  constructor(private internshipService: LiveInternshipService) { }
 
   ngOnInit() {
+    this.internshipService.getAll().subscribe(res => {
+      this.internships = res,
+      console.log(this.internships)
+    })
   }
 
 }

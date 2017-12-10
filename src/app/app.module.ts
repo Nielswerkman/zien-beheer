@@ -14,7 +14,8 @@ import {LoginComponent} from '../components/login/login.component';
 import {HttpClientService} from 'services/HttpClientService';
 import {LiveBlogService} from 'services/BlogService/LiveBlogService';
 import {LiveUserService} from '../services/UserService/LiveUserService';
-import {MockUserService} from '../services/UserService/MockUserService';
+import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import {MockUserService} from '../services/UserService/MockUserService';
   ],
   providers: [HttpClientService,
     LiveBlogService,
-    MockUserService,
-    LiveUserService],
+    LiveUserService,
+    LiveInternshipService,
+    LiveInstitutionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

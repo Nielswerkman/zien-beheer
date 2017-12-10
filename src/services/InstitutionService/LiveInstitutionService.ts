@@ -10,7 +10,7 @@ import { IInstitutionService } from "services/InstitutionService/IInstitutionSer
 
 
 @Injectable()
-export class LiveBlogService implements IInstitutionService {
+export class LiveInstitutionService implements IInstitutionService {
 
     post(object: Institution) {
         return this.http.post(this.Url + object)
