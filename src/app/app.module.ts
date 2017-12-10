@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import {HttpModule} from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { InternshipComponent } from '../components/internship/internship.component';
 import { StudentComponent } from '../components/student/student.component';
@@ -9,6 +11,8 @@ import { InstitutionComponent } from '../components/institution/institution.comp
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import {routing} from 'app/app.routes';
 import { LoginComponent } from '../components/login/login.component';
+import { HttpClientService } from 'services/HttpClientService';
+import { LiveBlogService } from 'services/BlogService/LiveBlogService';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,11 @@ import { LoginComponent } from '../components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    routing
+    routing,
+    HttpModule
   ],
-  providers: [],
+  providers: [HttpClientService,
+  LiveBlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,11 +19,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>001</td>
-        <td>B. IJpelaar</td>
-        <td>Junior dev. Stockholm</td>
-        <td>14-11-2017</td>
+      <tr *ngFor="let blog of this.blogs">
+        <td>{{blog.id}}</td>
+        <td>{{blog.creator.firstName + ' ' + blog.creator.infix + ' ' + blog.creator.lastName}}</td>
+        <td>{{blog.title}}</td>
+        <td>{{blog.date}}</td>
         <td>X V 0</td>
       </tr>
     </tbody>
