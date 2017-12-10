@@ -8,7 +8,7 @@ import { BlogComponent } from '../components/blog/blog.component';
 import { InstitutionComponent } from '../components/institution/institution.component';
 import { SidebarComponent } from '../components/sidebar/sidebar.component';
 import {routing} from 'app/app.routes';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from '../components/login/login.component';
 
 @NgModule({
   declarations: [
