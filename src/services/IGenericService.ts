@@ -1,11 +1,11 @@
+import {Observable} from 'rxjs/Observable';
+
 export interface IGenericService<T> {
-  post(object: T): boolean;
+  post(object: T);
 
-  put(object: T): boolean;
+  put(object: T);
 
-  get(id: number): T;
+  get(id: number): Observable<T>;
 
-  getAll(): T[];
-
-  delete(id: number): boolean;
+  getAll(): Observable<T[]>;
 }
