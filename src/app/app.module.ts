@@ -18,11 +18,13 @@ import { LiveInternshipService } from 'services/InternshipService/LiveInternship
 import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 import { UserComponent } from 'components/user/user.component';
 import { AddUserComponent } from 'components/user/add-user.component';
+import { AddInternshipComponent } from 'components/internship/add-internship.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InternshipComponent,
+    AddInternshipComponent,
     UserComponent,
     AddUserComponent,
     BlogComponent,
