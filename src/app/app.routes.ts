@@ -10,7 +10,8 @@ const APP_ROUTES: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'institution', component: InstitutionComponent},
   {path: 'internship', component: InternshipComponent},
-  {path: 'student', component: StudentComponent},
+  {path: 'user', component: StudentComponent},
+  {path: 'user/add' component:}
 ];
 
 export const routing = RouterModule.forRoot(APP_ROUTES, {useHash: true});
