@@ -18,7 +18,10 @@
         <td>{{institution.id}}</td>
         <td>{{institution.name}}</td>
         <td>{{institution.city}}, {{institution.country}}</td>
-        <td>E D</td>
+        <td>
+          <a [routerLink]="['institution/edit']"><i class="fa fa-pencil"></i></a>
+          <a [routerLink]="['institution/delete']"><i class="fa fa-trash"></i></a>
+        </td>
       </tr>
     </tbody>
   </table>
