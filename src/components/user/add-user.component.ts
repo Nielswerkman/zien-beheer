@@ -11,7 +11,6 @@ export class AddUserComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        throw new Error("Method not implemented.");
     }
 
 }
