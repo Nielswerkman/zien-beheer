@@ -5,12 +5,14 @@ import {InternshipComponent} from '../components/internship/internship.component
 import {UserComponent} from '../components/user/user.component';
 import {AddUserComponent} from '../components/user/add-user.component'
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
+import { AddInstitutionComponent } from 'components/institution/add-institution.component';
 
 
 const APP_ROUTES: Routes = [
   {path: '', component: BlogComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'institution', component: InstitutionComponent},
+  {path: 'institution/add', component: AddInstitutionComponent},
   {path: 'internship', component: InternshipComponent},
   {path: 'internship/add', component: AddInternshipComponent},
   {path: 'user', component: UserComponent},

@@ -1,6 +1,7 @@
 import { OnInit, Component } from "@angular/core";
 
-Component({
+
+@Component({
     selector: 'add-institution',
     templateUrl: './add-institution.component.html',
     styleUrls: ['./add-institution.component.css']

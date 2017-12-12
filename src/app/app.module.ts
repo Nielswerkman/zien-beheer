@@ -19,6 +19,7 @@ import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitut
 import { UserComponent } from 'components/user/user.component';
 import { AddUserComponent } from 'components/user/add-user.component';
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
+import { AddInstitutionComponent } from 'components/institution/add-institution.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddInternshipComponent } from 'components/internship/add-internship.com
     AddUserComponent,
     BlogComponent,
     InstitutionComponent,
+    AddInstitutionComponent,
     SidebarComponent,
     LoginComponent
   ],
