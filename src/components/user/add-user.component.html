@@ -1,3 +1,38 @@
-<p>
-    user-form works!
-</p>
+<div class="container">
+    <h1 id="page-title">Gebruiker toevoegen</h1>
+    <form>
+        <div class="form-group">
+            <label for="first-name">Voornaam</label>
+            <input type="text" name="first-name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="infix">Tussenvoegsel</label>
+            <input type="text" name="infix" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="last-name">Achternaam</label>
+            <input type="text" name="last-name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="study">Studie</label>
+            <input type="text" name="study" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="email">Emailadres</label>
+            <input type="email" name="email" class="form-control" placeholder="naam@student.fontys.nl" />
+        </div>
+        <div class="form-group">
+            <label for="user-photo">Foto</label>
+            <input type="file" class="form-control-file" id="user-photo" aria-describedby="photo-help" />
+            <small id="photo-help" class="form-text text-muted">Hier een duidelijke foto van gebruiker uploaden. Formaat 2:3.</small> 
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" />
+                Administrator
+            </label>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary">Bevestigen</button>
+    </form>
+</div>
