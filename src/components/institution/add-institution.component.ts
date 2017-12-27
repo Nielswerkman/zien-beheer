@@ -2,6 +2,7 @@ import { OnInit, Component } from "@angular/core";
 import { Institution } from "models/institution";
 import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
 import { Location } from "models/location";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -13,7 +14,7 @@ export class AddInstitutionComponent implements OnInit {
 
     model = new Institution(true, "", "", "", "", 0, new Location(0,0), "", "", "", "");
 
-    constructor(private institutionService: LiveInstitutionService) {
+    constructor(private institutionService: LiveInstitutionService, private router: Router) {
 
     }
 
@@ -24,6 +25,7 @@ export class AddInstitutionComponent implements OnInit {
     postInstitution() {
         this.institutionService.post(this.model).subscribe(res => {
             console.log(res);
-        })
+        });
+        this.router.navigate(['institution'])
     }
 }
