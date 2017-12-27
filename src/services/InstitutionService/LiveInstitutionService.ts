@@ -22,7 +22,7 @@ export class LiveInstitutionService implements IInstitutionService {
         return Observable.from(this.http.get(this.Url + id).map((res: Response) => res.json()));
     }
 
-    private Url = host + folder + 'school/';
+    private Url = host + folder + 'institution/';
 
     constructor(private http: HttpClientService) {
 
