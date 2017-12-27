@@ -14,7 +14,7 @@ import { IInternshipService } from 'services/InternshipService/IInternshipServic
 export class LiveInternshipService implements IInternshipService {
 
     post(object: Internship) {
-        return this.http.post(this.Url + object)
+        return this.http.post(this.Url, object)
     }
     put(object: Internship) {
         return this.http.put(this.Url + object)

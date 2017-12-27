@@ -1,3 +1,5 @@
+import { Location } from "models/location";
+
 export class Institution {
   active: boolean;
   city: string;
@@ -11,7 +13,7 @@ export class Institution {
   street: string;
   url: string;
 
-  constructor(active: boolean, city: string, country: string, email: string, houseNumber: string, id: number, location: Location, name: string, phoneNumber: string, street: string, url: string) {
+  constructor(active?: boolean, city?: string, country?: string, email?: string, houseNumber?: string, id?: number, location?: Location, name?: string, phoneNumber?: string, street?: string, url?: string) {
     this.active = active;
     this.city = city;
     this.country = country;

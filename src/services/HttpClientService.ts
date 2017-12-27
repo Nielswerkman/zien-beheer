@@ -18,11 +18,11 @@ export class HttpClientService {
         return this.http.get(url, { headers: headers });
     }
 
-    post(url){
+    post(url, body){
         const headers = new Headers();
         this.authorize(headers);
 
-        return this.http.post(url, {headers: headers});
+        return this.http.post(url, body, {headers: headers});
     }
 
     put(url){

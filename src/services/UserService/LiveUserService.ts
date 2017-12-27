@@ -18,7 +18,7 @@ export class LiveUserService implements IUserService {
     }
 
     post(object: User) {
-        return this.http.post(this.Url + object)
+        return this.http.post(this.Url, object)
     }
     put(object: User) {
         return this.http.put(this.Url + object)

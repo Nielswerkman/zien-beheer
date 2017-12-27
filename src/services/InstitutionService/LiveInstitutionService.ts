@@ -13,7 +13,7 @@ import { IInstitutionService } from "services/InstitutionService/IInstitutionSer
 export class LiveInstitutionService implements IInstitutionService {
 
     post(object: Institution) {
-        return this.http.post(this.Url + object)
+        return this.http.post(this.Url, object)
     }
     put(object: Institution) {
         return this.http.put(this.Url + object)

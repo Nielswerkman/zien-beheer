@@ -1,9 +1,9 @@
 export class Location{
-  latitude: string;
-  longitude: string;
+  latitude: number;
+  longitude: number;
 
 
-  constructor(latitude: string, longitude: string) {
+  constructor(latitude: number, longitude: number) {
     this.latitude = latitude;
     this.longitude = longitude;
   }
