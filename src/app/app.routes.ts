@@ -6,6 +6,7 @@ import {UserComponent} from '../components/user/user.component';
 import {AddUserComponent} from '../components/user/add-user.component'
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
+import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 
 
 const APP_ROUTES: Routes = [
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
   {path: 'institution/add', component: AddInstitutionComponent},
   {path: 'internship', component: InternshipComponent},
   {path: 'internship/add', component: AddInternshipComponent},
+  {path: 'internshiproute', component: InternshipRouteComponent},
   {path: 'user', component: UserComponent},
   {path: 'user/add', component: AddUserComponent}
 ];
