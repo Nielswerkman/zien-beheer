@@ -17,6 +17,7 @@ export class InternshipRouteComponent implements OnInit {
     ngOnInit() {
         this.routeService.getAll().subscribe(res => {
             this.routes = res;
+            console.log(res);
         })
     }
 }

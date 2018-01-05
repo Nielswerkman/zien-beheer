@@ -6,7 +6,7 @@ export class InternshipRoute {
     name: String;
     institution: Institution
 
-    constructor(id?: number, name?: String, institution?: Institution) {
+    constructor(name?: String, institution?: Institution, id?: number) {
         this.id = id;
         this.name = name;
         this.institution = institution;

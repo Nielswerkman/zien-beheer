@@ -15,7 +15,8 @@ export class AddInternshipRouteComponent implements OnInit {
 
     private institutions: Institution[];
 
-    model = new InternshipRoute(0, "", null);
+    model = new InternshipRoute("", null);
+    institution = null;
 
     constructor(
         private institutionService: LiveInstitutionService,
@@ -30,6 +31,7 @@ export class AddInternshipRouteComponent implements OnInit {
     }
 
     postInternshipRoute() {
+        this.model.institution = this.institution;
         this.internshipRouteService.post(this.model).subscribe(res => {
             console.log(res);
         })
