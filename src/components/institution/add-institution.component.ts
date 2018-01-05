@@ -22,7 +22,7 @@ export class AddInstitutionComponent implements OnInit {
 
     }
 
-    postInstitution() {
+    postInstitution() {  
         this.institutionService.post(this.model).subscribe(res => {
             console.log(res);
         });
