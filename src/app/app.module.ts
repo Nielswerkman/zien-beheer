@@ -20,12 +20,15 @@ import { UserComponent } from 'components/user/user.component';
 import { AddUserComponent } from 'components/user/add-user.component';
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InternshipComponent,
     AddInternshipComponent,
+    InternshipRouteComponent,
     UserComponent,
     AddUserComponent,
     BlogComponent,
@@ -44,6 +47,7 @@ import { AddInstitutionComponent } from 'components/institution/add-institution.
     LiveBlogService,
     LiveUserService,
     LiveInternshipService,
+    LiveInternshipRouteService,
     LiveInstitutionService],
   bootstrap: [AppComponent]
 })
