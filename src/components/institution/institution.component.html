@@ -19,7 +19,7 @@
         <td>{{institution.name}}</td>
         <td>{{institution.city}}, {{institution.country}}</td>
         <td>
-          <a [routerLink]="['institution/edit']"><i class="fa fa-pencil"></i></a>
+          <i class="fa fa-pencil" (click)="goToEdit(institution.id)"></i>
           <a [routerLink]="['institution/delete']"><i class="fa fa-trash"></i></a>
         </td>
       </tr>

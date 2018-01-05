@@ -16,7 +16,7 @@ export class LiveInstitutionService implements IInstitutionService {
         return this.http.post(this.Url, object)
     }
     put(object: Institution) {
-        return this.http.put(this.Url + object)
+        return this.http.put(this.Url , object)
     }
     get(id: number): Observable<Institution> {
         return Observable.from(this.http.get(this.Url + id).map((res: Response) => res.json()));

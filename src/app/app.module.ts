@@ -20,6 +20,7 @@ import { UserComponent } from 'components/user/user.component';
 import { AddUserComponent } from 'components/user/add-user.component';
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
+import { UpdateInstitutionComponent } from 'components/institution/update-institution.component';
 import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
 import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
@@ -29,6 +30,7 @@ import { AddInternshipRouteComponent } from 'components/internship-route/add-int
     AppComponent,
     InternshipComponent,
     AddInternshipComponent,
+    UpdateInstitutionComponent,
     InternshipRouteComponent,
     AddInternshipRouteComponent,
     UserComponent,

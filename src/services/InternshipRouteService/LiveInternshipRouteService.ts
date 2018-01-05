@@ -21,7 +21,7 @@ export class LiveInternshipRouteService implements IInternshipRouteService {
         return this.http.post(this.Url, object);
     }
     put(object: InternshipRoute) {
-        return this.http.put(this.Url + object);
+        return this.http.put(this.Url , object);
     }
     get(id: number): Observable<InternshipRoute> {
         return Observable.from(this.http.get(this.Url + id).map((res: Response) => res.json()));
