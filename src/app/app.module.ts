@@ -22,6 +22,7 @@ import { AddInternshipComponent } from 'components/internship/add-internship.com
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
 import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
 import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
+import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { InternshipRouteComponent } from 'components/internship-route/internship
     InternshipComponent,
     AddInternshipComponent,
     InternshipRouteComponent,
+    AddInternshipRouteComponent,
     UserComponent,
     AddUserComponent,
     BlogComponent,

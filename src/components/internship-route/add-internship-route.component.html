@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 id="page-title">Nieuwe Studierichting</h1>
+    <form (ngSubmit)="postStudyRoute()">
+        <div class="form-group">
+            <label for="name">Naam</label>
+            <input type="text" name="name" id="name" class="form-control" required />
+        </div>
+        <div>
+            <label for="institution">Wordt gegeven op</label>
+            <select name="institution" id="institution" class="form-control" required>
+                <option *ngFor="let institution of institutions">{{institution.id}}: {{institution.name}}</option>
+            </select>
+        </div>
+    </form>
+</div>

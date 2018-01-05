@@ -12,7 +12,7 @@ import { Router } from "@angular/router";
 })
 export class AddInstitutionComponent implements OnInit {
 
-    model = new Institution(true, "", "", "", "", 0, new Location(0,0), "", "", "", "");
+    model = new Institution(true, "", "", "", "", 0, new Location(0,0), "", "", "", "", "");
 
     constructor(private institutionService: LiveInstitutionService, private router: Router) {
 
