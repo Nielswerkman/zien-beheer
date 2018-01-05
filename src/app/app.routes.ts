@@ -6,6 +6,7 @@ import {UserComponent} from '../components/user/user.component';
 import {AddUserComponent} from '../components/user/add-user.component'
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
+import { UpdateInstitutionComponent } from 'components/institution/update-institution.component';
 import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
 
@@ -15,6 +16,7 @@ const APP_ROUTES: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'institution', component: InstitutionComponent},
   {path: 'institution/add', component: AddInstitutionComponent},
+  {path: 'institution/update/:id', component: UpdateInstitutionComponent},
   {path: 'internship', component: InternshipComponent},
   {path: 'internship/add', component: AddInternshipComponent},
   {path: 'internshiproute', component: InternshipRouteComponent},

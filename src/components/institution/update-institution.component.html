@@ -1,0 +1,46 @@
+<div class="container">
+    <h1 id="page-title">Nieuwe institutie</h1>
+    <form (ngSubmit)="postInstitution()">
+        <div class="form-group">
+            <label for="name">Naam institutie</label>
+            <input [(ngModel)]="model.name" type="text" name="name" id="name" class="form-control" required />
+        </div>
+        <div class="row">
+            <div class="form-group col-md-8">
+                <label for="street">Straatnaam</label>
+                <input [(ngModel)]="model.street" type="text" name="street" id="street" class="form-control" required />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="number">Huisnummer</label>
+                <input [(ngModel)]="model.houseNumber" type="text" name="houseNumber" id="houseNumber" class="form-control" required />
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="zipcode">Postcode</label>
+                <input [(ngModel)]="model.zipCode" type="text" name="zipcode" id="zipcode" class="form-control" required />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="city">Stad</label>
+                <input [(ngModel)]="model.city" type="text" name="city" id="city" class="form-control" required />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="country">Land</label>
+                <input [(ngModel)]="model.country" type="text" name="country" id="country" class="form-control" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Emailadres</label>
+            <input [(ngModel)]="model.email" type="text" name="email" id="email" class="form-control" required />
+        </div>
+        <div class="form-group">
+            <label for="phone">Telefoonnummer</label>
+            <input [(ngModel)]="model.phoneNumber" type="text" name="phone" id="phone" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="website">Website</label>
+            <input [(ngModel)]="model.url" type="text" name="website" id="website" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Bevestigen</button>
+    </form>
+</div>
