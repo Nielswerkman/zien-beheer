@@ -4,7 +4,6 @@ import { LiveInstitutionService } from "services/InstitutionService/LiveInstitut
 import { Location } from "models/location";
 import { Router } from "@angular/router";
 
-
 @Component({
     selector: 'add-institution',
     templateUrl: './add-institution.component.html',
@@ -22,7 +21,7 @@ export class AddInstitutionComponent implements OnInit {
 
     }
 
-    postInstitution() {  
+    postInstitution() {
         this.institutionService.post(this.model).subscribe(res => {
             console.log(res);
         });
