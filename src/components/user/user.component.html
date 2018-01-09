@@ -23,14 +23,10 @@
       <td>{{s.study}}</td>
       <td>{{s.email}}</td>
       <td>
-        <a [routerLink]="['/student/edit', s.id]" class="btn-link">
-          <i class="fa fa-pencil"></i>
-        </a>
+          <i class="fa fa-pencil" (click)="goToEdit(s.id)"></i>
       </td>
       <td>
-        <a [routerLink]="['/student/remove', s.id]" class="btn-link">
-          <i class="fa fa-trash"></i>
-        </a>
+          <i class="fa fa-trash" (click)="disableUser(s.id)"></i>
       </td>
     </tr>
     </tbody>
