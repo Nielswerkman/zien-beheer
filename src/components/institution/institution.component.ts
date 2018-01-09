@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class InstitutionComponent implements OnInit {
 
   private institutions: Institution[];
+  private updateModel: Institution;
 
   constructor(private institutionService: LiveInstitutionService, private route: Router) { }
 
@@ -25,4 +26,17 @@ export class InstitutionComponent implements OnInit {
     this.route.navigate(['../institution/update/', id]);
   }
 
+  disableInstitution(id: number){
+    
+    this.updateModel = this.institutions.filter(
+      Institution => Institution.id == id,
+    )[0]
+    this.updateModel.active = false;
+    console.log(this.updateModel);
+    
+    this.institutionService.put(this.updateModel).subscribe(res => {
+      console.log(res);
+   });
+    
+  }
 }
