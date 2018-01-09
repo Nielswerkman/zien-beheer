@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   public users: User[] = [];
+  private updateModel: User;
 
   constructor(public UserService: LiveUserService, private route: Router) {
     UserService.getAll().subscribe(result => this.users = result);
@@ -20,5 +21,19 @@ export class UserComponent implements OnInit {
 
   goToEdit(id: number){
     this.route.navigate(['../user/update/', id]);
+  }
+
+  disableUser(id: number){
+    
+    this.updateModel = this.users.filter(
+      user => user.id == id,
+    )[0]
+    this.updateModel.active = false;
+    console.log(this.updateModel);
+    
+    this.UserService.put(this.updateModel).subscribe(res => {
+      console.log(res);
+   });
+    
   }
 }
