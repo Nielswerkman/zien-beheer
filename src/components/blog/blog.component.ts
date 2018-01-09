@@ -11,6 +11,7 @@ import { LiveBlogService } from 'services/BlogService/LiveBlogService';
 export class BlogComponent implements OnInit {
 
   private blogs: Blog[];
+  private updateModel: Blog;
 
   constructor(private blogService: LiveBlogService) { }
 
@@ -19,6 +20,34 @@ export class BlogComponent implements OnInit {
       this.blogs = res,
       console.log(res);
     })
+  }
+
+  rejectBlog(id: number){
+    
+    this.updateModel = this.blogs.filter(
+      blog => blog.id == id,
+    )[0]
+    this.updateModel.rejected = true;
+    console.log(this.updateModel);
+    
+    this.blogService.put(this.updateModel).subscribe(res => {
+      console.log(res);
+   });
+    
+  }
+
+  acceptedBlog(id: number){
+    
+    this.updateModel = this.blogs.filter(
+      blog => blog.id == id,
+    )[0]
+    this.updateModel.accepted = true;
+    console.log(this.updateModel);
+    
+    this.blogService.put(this.updateModel).subscribe(res => {
+      console.log(res);
+   });
+    
   }
 
 }
