@@ -19,3 +19,8 @@
 .table thead {
     color: #663366;
 }
+
+.btn-primary {
+    background-color: #663366;
+    border-color: #663366;
+}

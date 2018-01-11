@@ -1,6 +1,7 @@
 import {Blog} from './blog';
 import {User} from './user';
 import {Institution} from './institution';
+import { InternshipRoute } from 'models/internshipRoute';
 
 export class Internship {
 
