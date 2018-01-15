@@ -1,0 +1,17 @@
+
+        <div class="container">
+            <h1 id="page-title">Nieuwe Studierichting</h1>
+            <form (ngSubmit)="updateInternshipRoute()">
+                <div class="form-group">
+                    <label for="name">Naam</label>
+                    <input [(ngModel)]="model.name" type="text" name="name" id="name" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label for="institution">Wordt gegeven op</label>
+                    <select [(ngModel)]="model.institution" name="institution" id="institution" class="form-control" required>
+                        <option *ngFor="let institution of institutions" [ngValue]="institution" >{{institution.id}}: {{institution.name}}</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Bevestigen</button>
+            </form>
+        </div>
