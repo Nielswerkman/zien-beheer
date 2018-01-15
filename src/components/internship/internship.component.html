@@ -11,14 +11,15 @@
           <th>ID</th>
           <th>Naam</th>
           <th>Richting</th>
-          <th>Soort</th>
           <th>Acties</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let internship of internships">
           <td>{{internship.id}}</td>
-          <td></td>
+          <td>{{internship.title}}</td>
+          <td>{{internship.internshipRoute.name}}</td>
+          <td>bewerken etc.</td>
         </tr>
       </tbody>
     </table>

@@ -9,6 +9,7 @@ import { Blog } from "models/blog";
 import { LiveInternshipService } from "services/InternshipService/LiveInternshipService";
 import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
 import { InternshipRoute } from "models/internshipRoute";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'add-internship',
@@ -33,7 +34,7 @@ export class AddInternshipComponent implements OnInit {
     route = null;
 
     constructor(private internshipService: LiveInternshipService, private institutionService: LiveInstitutionService,
-        private userService: LiveUserService, private routeService: LiveInternshipRouteService) {}
+        private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router) {}
 
     ngOnInit() {
         this.institutionService.getAll().subscribe(res => {
@@ -67,5 +68,6 @@ export class AddInternshipComponent implements OnInit {
         this.internshipService.post(this.internship).subscribe(res => {
             console.log(res);
         })
+        this.router.navigate(['internship']);
     }
 }
