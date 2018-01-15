@@ -16,7 +16,9 @@ export class InstitutionComponent implements OnInit {
   constructor(private institutionService: LiveInstitutionService, private route: Router) { }
 
   ngOnInit() {
-    this.institutionService.getAll().subscribe(res => {
+    this.institutionService.getAll()
+    .map(insts => insts.filter(inst => inst.active === true))
+    .subscribe(res => {
       this.institutions = res,
       console.log(Institution);
     })

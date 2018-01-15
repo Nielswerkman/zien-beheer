@@ -19,7 +19,9 @@
           <td>{{internship.id}}</td>
           <td>{{internship.title}}</td>
           <td>{{internship.internshipRoute.name}}</td>
-          <td>bewerken etc.</td>
+          <td>
+            <i class="fa fa-trash" (click)="disableInternship(internship.id)"></i>
+          </td>
         </tr>
       </tbody>
     </table>

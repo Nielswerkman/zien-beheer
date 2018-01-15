@@ -17,7 +17,9 @@ export class InternshipRouteComponent implements OnInit {
     constructor(private routeService: LiveInternshipRouteService, private route: Router) {}
 
     ngOnInit() {
-        this.routeService.getAll().subscribe(res => {
+        this.routeService.getAll()
+        .map(routes => routes.filter(route => route.active === true))
+        .subscribe(res => {
             this.routes = res;
             console.log(res);
         })

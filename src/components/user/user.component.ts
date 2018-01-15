@@ -13,7 +13,9 @@ export class UserComponent implements OnInit {
   private updateModel: User;
 
   constructor(public UserService: LiveUserService, private route: Router) {
-    UserService.getAll().subscribe(result => this.users = result);
+    UserService.getAll()
+    .map(users => users.filter(user => user.active === true))
+    .subscribe(result => this.users = result);
   }
 
   ngOnInit() {

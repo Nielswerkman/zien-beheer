@@ -25,7 +25,9 @@ export class AddInternshipRouteComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.institutionService.getAll().subscribe(res => {
+        this.institutionService.getAll()
+        .map(insts => insts.filter(inst => inst.active === true))
+        .subscribe(res => {
             this.institutions = res;
         })
     }
