@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
     
   }
 
-  acceptedBlog(id: number){
+  acceptBlog(id: number){
     
     this.updateModel = this.blogs.filter(
       blog => blog.id == id,
