@@ -37,15 +37,21 @@ export class AddInternshipComponent implements OnInit {
         private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router) {}
 
     ngOnInit() {
-        this.institutionService.getAll().subscribe(res => {
+        this.institutionService.getAll()
+        .map(insts => insts.filter(inst => inst.active === true))
+        .subscribe(res => {
             this.institutions = res;
         })
 
-        this.userService.getAll().subscribe(res => {
+        this.userService.getAll()
+        .map(users => users.filter(user => user.active === true))
+        .subscribe(res => {
             this.users = res;
         })
 
-        this.routeService.getAll().subscribe(res => {
+        this.routeService.getAll()
+        .map(routes => routes.filter(route => route.active === true))
+        .subscribe(res => {
             this.routes = res;
         })
     }

@@ -14,7 +14,9 @@ export class InternshipComponent implements OnInit {
   constructor(private internshipService: LiveInternshipService) { }
 
   ngOnInit() {
-    this.internshipService.getAll().subscribe(res => {
+    this.internshipService.getAll()
+    .map(interns => interns.filter(intern => intern.active === true))
+    .subscribe(res => {
       this.internships = res,
       console.log(this.internships)
     })
