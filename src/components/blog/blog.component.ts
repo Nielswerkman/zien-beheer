@@ -16,7 +16,9 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: LiveBlogService) { }
 
   ngOnInit() {
-    this.blogService.getAll().subscribe(res => {
+    this.blogService.getAll()
+    .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false))
+    .subscribe(res => {
       this.blogs = res,
       console.log(res);
     })
