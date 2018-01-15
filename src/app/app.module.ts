@@ -26,6 +26,7 @@ import { InternshipRouteComponent } from 'components/internship-route/internship
 import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
 import { UpdateUserComponent } from 'components/user/update-user.component';
 import { ShowBlogComponent } from 'components/blog/show-blog.component';
+import { UpdateInternshipRouteComponent } from 'components/internship-route/update-internship-route.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ShowBlogComponent } from 'components/blog/show-blog.component';
     UpdateInstitutionComponent,
     InternshipRouteComponent,
     AddInternshipRouteComponent,
+    UpdateInternshipRouteComponent,
     UserComponent,
     AddUserComponent,
     UpdateUserComponent,

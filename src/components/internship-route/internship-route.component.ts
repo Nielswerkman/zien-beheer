@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { InternshipRoute } from "models/internshipRoute";
 import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'internship-route',
@@ -13,7 +14,7 @@ export class InternshipRouteComponent implements OnInit {
     private routes: InternshipRoute[];
     private updateModel: InternshipRoute;
 
-    constructor(private routeService: LiveInternshipRouteService) {}
+    constructor(private routeService: LiveInternshipRouteService, private route: Router) {}
 
     ngOnInit() {
         this.routeService.getAll()
@@ -22,6 +23,10 @@ export class InternshipRouteComponent implements OnInit {
             this.routes = res;
             console.log(res);
         })
+    }
+
+    goToEdit(id: number){
+        this.route.navigate(['../internshiproute/update/', id]);
     }
 
     disableInternshipRoute(id: number){
@@ -36,6 +41,8 @@ export class InternshipRouteComponent implements OnInit {
           console.log(res);
        });
         
-      }
+    }
+
+
 
 }
