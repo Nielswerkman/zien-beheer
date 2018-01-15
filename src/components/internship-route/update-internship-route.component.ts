@@ -17,6 +17,7 @@ export class UpdateInternshipRouteComponent implements OnInit {
     private institutions: Institution[];
 
     id: number;
+    oldModel: InternshipRoute;
     model: InternshipRoute;
 
 
@@ -35,7 +36,9 @@ export class UpdateInternshipRouteComponent implements OnInit {
         })
 
         this.internshipRouteService.get(this.id).subscribe(res => {
-            this.model = res
+            this.model = res,
+            this.oldModel = new InternshipRoute();
+            this.oldModel.institution = res.institution;
         })
 
         

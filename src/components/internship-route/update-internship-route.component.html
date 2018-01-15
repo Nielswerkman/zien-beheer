@@ -7,7 +7,7 @@
                     <input [(ngModel)]="model.name" type="text" name="name" id="name" class="form-control" required />
                 </div>
                 <div class="form-group">
-                    <label for="institution">Wordt gegeven op</label>
+                    <label for="institution">Huidig instituut: {{oldModel.institution.name}}</label>
                     <select [(ngModel)]="model.institution" name="institution" id="institution" class="form-control" required>
                         <option *ngFor="let institution of institutions" [ngValue]="institution" >{{institution.id}}: {{institution.name}}</option>
                     </select>
