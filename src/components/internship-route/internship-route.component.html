@@ -20,7 +20,7 @@
                 <td>{{route.institution.name}}</td>
                 <td>
                     <a [routerLink]="['internshiproute/edit']"><i class="fa fa-pencil"></i></a>
-                    <a [routerLink]="['internshiproute/delete']"><i class="fa fa-trash"></i></a>
+                    <i class="fa fa-trash" (click)="disableInternshipRoute(route.id)"></i>
                 </td>
             </tr>
         </tbody>
