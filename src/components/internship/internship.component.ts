@@ -10,6 +10,7 @@ import { Internship } from 'models/Internship';
 export class InternshipComponent implements OnInit {
 
   private internships: Internship[];
+  private updateModel: Internship;
 
   constructor(private internshipService: LiveInternshipService) { }
 
@@ -20,6 +21,17 @@ export class InternshipComponent implements OnInit {
       this.internships = res,
       console.log(this.internships)
     })
+  }
+
+  disableInternship(id: number) {
+      this.updateModel = this.internships.filter(
+        intern => intern.id === id
+      )[0];
+      this.updateModel.active = false;
+
+      this.internshipService.put(this.updateModel).subscribe(res => {
+        console.log(res)
+      });
   }
 
 }
