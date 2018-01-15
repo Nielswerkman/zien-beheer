@@ -11,6 +11,7 @@ import { LiveInternshipRouteService } from "services/InternshipRouteService/Live
 export class InternshipRouteComponent implements OnInit {
 
     private routes: InternshipRoute[];
+    private updateModel: InternshipRoute;
 
     constructor(private routeService: LiveInternshipRouteService) {}
 
@@ -20,4 +21,19 @@ export class InternshipRouteComponent implements OnInit {
             console.log(res);
         })
     }
+
+    disableInternshipRoute(id: number){
+    
+        this.updateModel = this.routes.filter(
+          route => route.id == id,
+        )[0]
+        this.updateModel.active = false;
+        console.log(this.updateModel);
+        
+        this.routeService.put(this.updateModel).subscribe(res => {
+          console.log(res);
+       });
+        
+      }
+
 }
