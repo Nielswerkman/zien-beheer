@@ -11,6 +11,7 @@ import { UpdateInstitutionComponent } from 'components/institution/update-instit
 import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
 import { UpdateInternshipRouteComponent } from 'components/internship-route/update-internship-route.component';
+import { UpdateInternshipComponent } from 'components/internship/update-internship.component';
 
 
 const APP_ROUTES: Routes = [
@@ -21,6 +22,7 @@ const APP_ROUTES: Routes = [
   {path: 'institution/update/:id', component: UpdateInstitutionComponent},
   {path: 'internship', component: InternshipComponent},
   {path: 'internship/add', component: AddInternshipComponent},
+  {path: 'internship/update/:id', component: UpdateInternshipComponent},
   {path: 'internshiproute', component: InternshipRouteComponent},
   {path: 'internshiproute/add', component: AddInternshipRouteComponent},
   {path: 'internshiproute/update/:id', component: UpdateInternshipRouteComponent},

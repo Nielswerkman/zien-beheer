@@ -20,6 +20,7 @@
           <td>{{internship.title}}</td>
           <td>{{internship.internshipRoute.name}}</td>
           <td>
+              <i class="fa fa-pencil" (click)="goToEdit(internship.id)"></i>
             <i class="fa fa-trash" (click)="disableInternship(internship.id)"></i>
           </td>
         </tr>
