@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Blog } from 'models/blog';
 import { LiveBlogService } from 'services/BlogService/LiveBlogService';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +14,7 @@ export class BlogComponent implements OnInit {
   private blogs: Blog[];
   private updateModel: Blog;
 
-  constructor(private blogService: LiveBlogService) { }
+  constructor(private blogService: LiveBlogService, private router: Router) { }
 
   ngOnInit() {
     this.blogService.getAll()
@@ -50,6 +51,10 @@ export class BlogComponent implements OnInit {
       console.log(res);
    });
     
+  }
+
+  showBlog(id: number) {
+    this.router.navigate(['../blog/show', id]);
   }
 
 }

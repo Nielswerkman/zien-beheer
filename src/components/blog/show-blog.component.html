@@ -1,0 +1,22 @@
+<div class="jumbotron" id="blog-head-image">
+    <div class="blog-title-block">
+        <h1 class="blog-title display-3">{{blog?.title}}</h1>
+    </div>
+</div>
+<div class="container full-content">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10 detail-content">
+            <div [innerHTML] = "blog?.content"></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h3><i>Blog geschreven door:</i></h3>
+            <h5>{{blog?.creator.firstName}} {{blog?.creator.lastName}}</h5>
+        </div>
+    </div>
+</div>

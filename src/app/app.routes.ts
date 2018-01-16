@@ -10,6 +10,7 @@ import { AddInstitutionComponent } from 'components/institution/add-institution.
 import { UpdateInstitutionComponent } from 'components/institution/update-institution.component';
 import { InternshipRouteComponent } from 'components/internship-route/internship-route.component';
 import { AddInternshipRouteComponent } from 'components/internship-route/add-internship-route.component';
+import { ShowBlogComponent } from 'components/blog/show-blog.component';
 import { UpdateInternshipRouteComponent } from 'components/internship-route/update-internship-route.component';
 import { UpdateInternshipComponent } from 'components/internship/update-internship.component';
 
@@ -17,6 +18,7 @@ import { UpdateInternshipComponent } from 'components/internship/update-internsh
 const APP_ROUTES: Routes = [
   {path: '', component: BlogComponent},
   {path: 'blog', component: BlogComponent},
+  {path: 'blog/show/:id', component: ShowBlogComponent},
   {path: 'institution', component: InstitutionComponent},
   {path: 'institution/add', component: AddInstitutionComponent},
   {path: 'institution/update/:id', component: UpdateInstitutionComponent},

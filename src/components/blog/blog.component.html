@@ -27,7 +27,7 @@
         <td>
             <i class="fa fa-check" (click)="acceptBlog(blog.id)"></i> 
             <i class="fa fa-trash" (click)="rejectBlog(blog.id)"></i>
-          <a [routerLink]="['/blog/show']"><i class="fa fa-eye"></i></a>
+            <i class="fa fa-eye" (click)="showBlog(blog.id)"></i>
         </td>
       </tr>
     </tbody>
