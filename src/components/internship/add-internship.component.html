@@ -1,6 +1,6 @@
 <div class="container">
     <h1 id="page-title">Nieuwe stage of minor</h1>
-    <form (ngSubmit)="postInternship()">
+    <form ngNativeValidate (ngSubmit)="postInternship()">
         <div class="form-group">
             <label for="name">Naam</label>
             <input [(ngModel)]="name" type="text" name="name" id="name" class="form-control" required />
