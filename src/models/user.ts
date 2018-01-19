@@ -21,11 +21,4 @@ export class User {
     this.active = active;
     this.isModerator = isModerator;
   }
-
-  getName() {
-    if (this.infix == null || this.infix === '' || this.infix.length === 0) {
-      return this.firstName + ' ' + this.lastName;
-    }
-    return this.firstName + ' ' + this.infix + ' ' + this.lastName;
-  }
 }
