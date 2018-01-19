@@ -43,10 +43,7 @@ export class UpdateInternshipRouteComponent implements OnInit {
     }
 
     updateInternshipRoute() {
-        console.log(this.model);
-        this.internshipRouteService.put(this.model).subscribe(res => {
-            console.log(res);
-        })
+        this.internshipRouteService.put(this.model).subscribe();
         this.router.navigate(['internshiproute']);
     }
 }

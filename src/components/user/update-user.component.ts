@@ -27,9 +27,7 @@ export class UpdateUserComponent implements OnInit {
     }
 
     postUser() {
-        this.userService.put(this.model).subscribe(res => {
-            console.log(res);
-        });
+        this.userService.put(this.model).subscribe();
         this.router.navigate(['user'])
     }
 

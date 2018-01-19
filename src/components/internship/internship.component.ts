@@ -21,9 +21,8 @@ export class InternshipComponent implements OnInit {
     this.internshipService.getAll()
     .map(interns => interns.filter(intern => intern.active === true))
     .subscribe(res => {
-      this.internships = res,
-      console.log(this.internships)
-    })
+      this.internships = res;
+    });
   }
 
   goToEdit(id: number) {
@@ -36,9 +35,7 @@ export class InternshipComponent implements OnInit {
       )[0];
       this.updateModel.active = false;
 
-      this.internshipService.put(this.updateModel).subscribe(res => {
-        console.log(res)
-      });
+      this.internshipService.put(this.updateModel).subscribe();
   }
 
 }

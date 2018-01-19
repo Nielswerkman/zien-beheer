@@ -23,7 +23,6 @@ export class InternshipRouteComponent implements OnInit {
             .map(routes => routes.filter(route => route.active === true))
             .subscribe(res => {
                 this.routes = res;
-                console.log(res);
             })
     }
 
@@ -36,10 +35,7 @@ export class InternshipRouteComponent implements OnInit {
             route => route.id === id,
         )[0]
         this.updateModel.active = false;
-        console.log(this.updateModel);
 
-        this.routeService.put(this.updateModel).subscribe(res => {
-            console.log(res);
-        });
+        this.routeService.put(this.updateModel).subscribe();
     }
 }

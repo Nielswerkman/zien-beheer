@@ -20,9 +20,7 @@ export class AddUserComponent implements OnInit {
     }
 
     postUser() {
-        console.log('posted')
-        this.userService.post(this.model)
-            .subscribe(res => console.log(res));
+        this.userService.post(this.model).subscribe();
         this.router.navigate(['user']);
     }
 

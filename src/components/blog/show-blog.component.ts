@@ -26,7 +26,6 @@ export class ShowBlogComponent implements OnInit {
 
         this.blogService.get(this.id).subscribe(res => {
             this.blog = res;
-            console.log(res);
         })
     }
 }

@@ -32,10 +32,7 @@ export class UserComponent implements OnInit {
       user => user.id === id,
     )[0]
     this.updateModel.active = false;
-    console.log(this.updateModel);
 
-    this.UserService.put(this.updateModel).subscribe(res => {
-      console.log(res);
-    });
+    this.UserService.put(this.updateModel).subscribe();
   }
 }

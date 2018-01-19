@@ -30,9 +30,7 @@ export class UpdateInstitutionComponent implements OnInit {
     }
 
     updateInstitution() {
-        this.institutionService.put(this.model).subscribe(res => {
-            console.log(res);
-        });
+        this.institutionService.put(this.model).subscribe();
         this.router.navigate(['institution'])
     }
 }

@@ -40,7 +40,6 @@ export class UpdateInternshipComponent implements OnInit {
         this.id = this.route.snapshot.params['id'];
 
         this.internshipService.get(this.id).subscribe(res => {
-            console.log(res);
             this.model = res,
 
             this.textModel = new Internship(null, null, null, null, null, null, null, null, null, null, null);
@@ -56,7 +55,6 @@ export class UpdateInternshipComponent implements OnInit {
             this.textModel.user.infix = res.user.infix;
             this.textModel.user.lastName = res.user.lastName;
 
-            console.log(this.textModel);
             this.dataLoaded = true;
 
         })
@@ -86,9 +84,7 @@ export class UpdateInternshipComponent implements OnInit {
     }
 
     updateInternship() {
-        this.internshipService.put(this.model).subscribe(res => {
-            console.log(res);
-        })
+        this.internshipService.put(this.model).subscribe()
         this.router.navigate(['internship']);
     }
 }

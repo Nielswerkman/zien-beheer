@@ -36,9 +36,7 @@ export class AddInternshipRouteComponent implements OnInit {
 
     postInternshipRoute() {
         this.model.institution = this.institution;
-        this.internshipRouteService.post(this.model).subscribe(res => {
-            console.log(res);
-        })
+        this.internshipRouteService.post(this.model).subscribe()
         this.router.navigate(['internshiproute']);
     }
 }

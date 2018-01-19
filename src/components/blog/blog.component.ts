@@ -23,8 +23,7 @@ export class BlogComponent implements OnInit {
     this.blogService.getAll()
     .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false))
     .subscribe(res => {
-      this.blogs = res,
-      console.log(res);
+      this.blogs = res
     })
   }
 
@@ -34,11 +33,8 @@ export class BlogComponent implements OnInit {
       blog => blog.id === id,
     )[0]
     this.updateModel.rejected = true;
-    console.log(this.updateModel);
 
-    this.blogService.put(this.updateModel).subscribe(res => {
-      console.log(res);
-   });
+    this.blogService.put(this.updateModel).subscribe();
 
   }
 
@@ -48,11 +44,8 @@ export class BlogComponent implements OnInit {
       blog => blog.id === id,
     )[0]
     this.updateModel.accepted = true;
-    console.log(this.updateModel);
 
-    this.blogService.put(this.updateModel).subscribe(res => {
-      console.log(res);
-   });
+    this.blogService.put(this.updateModel).subscribe();
 
   }
 
