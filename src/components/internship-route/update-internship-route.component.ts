@@ -1,14 +1,14 @@
-import { Component } from "@angular/core";
-import { OnInit } from "@angular/core";
-import { Institution } from "models/institution";
-import { InternshipRoute } from "models/internshipRoute";
-import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
-import { Router } from "@angular/router";
-import { ActivatedRoute } from "@angular/router";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
+import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Institution } from 'models/institution';
+import { InternshipRoute } from 'models/internshipRoute';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @Component({
-    selector: 'update-internship-route',
+    selector: 'app-update-internship-route',
     templateUrl: './update-internship-route.component.html',
     styleUrls: ['./update-internship-route.component.css']
 })
@@ -26,7 +26,7 @@ export class UpdateInternshipRouteComponent implements OnInit {
         private internshipRouteService: LiveInternshipRouteService,
         private router: Router,
         private route: ActivatedRoute
-    ) {}
+    ) { }
 
     ngOnInit(): void {
         this.id = this.route.snapshot.params['id'];
@@ -40,8 +40,6 @@ export class UpdateInternshipRouteComponent implements OnInit {
             this.oldModel = new InternshipRoute();
             this.oldModel.institution = res.institution;
         })
-
-        
     }
 
     updateInternshipRoute() {

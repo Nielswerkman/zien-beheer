@@ -5,13 +5,19 @@ import { HttpClientService } from 'services/HttpClientService';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Internship } from "models/Internship";
-import { IInternshipService } from 'services/InternshipService/IInternshipService';
+import { Internship } from 'models/Internship';
+import { IGenericService } from 'services/IGenericService';
 
 
 
 @Injectable()
-export class LiveInternshipService implements IInternshipService {
+export class LiveInternshipService implements IGenericService<Internship> {
+
+    private Url = host + folder + 'internship/';
+
+    constructor(private http: HttpClientService) {
+
+    }
 
     post(object: Internship) {
         return this.http.post(this.Url, object)
@@ -21,12 +27,6 @@ export class LiveInternshipService implements IInternshipService {
     }
     get(id: number): Observable<Internship> {
         return Observable.from(this.http.get(this.Url + id).map((res: Response) => res.json()));
-    }
-
-    private Url = host + folder + 'internship/';
-
-    constructor(private http: HttpClientService) {
-
     }
 
     getAll(): Observable<Internship[]> {

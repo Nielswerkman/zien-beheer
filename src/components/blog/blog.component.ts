@@ -25,32 +25,32 @@ export class BlogComponent implements OnInit {
     })
   }
 
-  rejectBlog(id: number){
-    
+  rejectBlog(id: number) {
+
     this.updateModel = this.blogs.filter(
-      blog => blog.id == id,
+      blog => blog.id === id,
     )[0]
     this.updateModel.rejected = true;
     console.log(this.updateModel);
-    
+
     this.blogService.put(this.updateModel).subscribe(res => {
       console.log(res);
    });
-    
+
   }
 
-  acceptBlog(id: number){
-    
+  acceptBlog(id: number) {
+
     this.updateModel = this.blogs.filter(
-      blog => blog.id == id,
+      blog => blog.id === id,
     )[0]
     this.updateModel.accepted = true;
     console.log(this.updateModel);
-    
+
     this.blogService.put(this.updateModel).subscribe(res => {
       console.log(res);
    });
-    
+
   }
 
   showBlog(id: number) {

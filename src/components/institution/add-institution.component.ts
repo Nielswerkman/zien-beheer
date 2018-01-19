@@ -1,17 +1,17 @@
-import { OnInit, Component } from "@angular/core";
-import { Institution } from "models/institution";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
-import { Location } from "models/location";
-import { Router } from "@angular/router";
+import { OnInit, Component } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { Location } from 'models/location';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'add-institution',
+    selector: 'app-add-institution',
     templateUrl: './add-institution.component.html',
     styleUrls: ['./add-institution.component.css']
 })
 export class AddInstitutionComponent implements OnInit {
 
-    model = new Institution(true, "", "", "", "", 0, new Location(0,0), "", "", "", "", "");
+    model = new Institution(true, '', '', '', '', 0, new Location(0, 0), '', '', '', '', '');
 
     constructor(private institutionService: LiveInstitutionService, private router: Router) {
 

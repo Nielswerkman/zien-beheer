@@ -1,19 +1,19 @@
-import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
-import { Component } from "@angular/core";
-import { Institution } from "models/institution";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
-import { LiveUserService } from "services/UserService/LiveUserService";
-import { Internship } from "models/Internship";
-import { User } from "models/user";
-import { Blog } from "models/blog";
-import { LiveInternshipService } from "services/InternshipService/LiveInternshipService";
-import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
-import { InternshipRoute } from "models/internshipRoute";
-import { Router } from "@angular/router";
-import { ActivatedRoute } from "@angular/router";
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Component } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { LiveUserService } from 'services/UserService/LiveUserService';
+import { Internship } from 'models/Internship';
+import { User } from 'models/user';
+import { Blog } from 'models/blog';
+import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { InternshipRoute } from 'models/internshipRoute';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'update-internship',
+    selector: 'app-update-internship',
     templateUrl: './update-internship.component.html',
     styleUrls: ['./update-internship.component.css']
 })
@@ -33,7 +33,8 @@ export class UpdateInternshipComponent implements OnInit {
 
 
     constructor(private internshipService: LiveInternshipService, private institutionService: LiveInstitutionService,
-        private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router, private route: ActivatedRoute) {}
+        private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router,
+        private route: ActivatedRoute) {}
 
     ngOnInit() {
         this.id = this.route.snapshot.params['id'];
@@ -85,7 +86,6 @@ export class UpdateInternshipComponent implements OnInit {
     }
 
     updateInternship() {
-        
         this.internshipService.put(this.model).subscribe(res => {
             console.log(res);
         })

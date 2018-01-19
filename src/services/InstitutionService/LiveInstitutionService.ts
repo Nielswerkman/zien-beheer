@@ -5,12 +5,18 @@ import { HttpClientService } from 'services/HttpClientService';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Institution } from "models/institution";
-import { IInstitutionService } from "services/InstitutionService/IInstitutionService";
+import { Institution } from 'models/institution';
+import { IGenericService } from 'services/IGenericService';
 
 
 @Injectable()
-export class LiveInstitutionService implements IInstitutionService {
+export class LiveInstitutionService implements IGenericService<Institution> {
+
+    private Url = host + folder + 'institution/';
+
+    constructor(private http: HttpClientService) {
+
+    }
 
     post(object: Institution) {
         return this.http.post(this.Url, object)
@@ -20,12 +26,6 @@ export class LiveInstitutionService implements IInstitutionService {
     }
     get(id: number): Observable<Institution> {
         return Observable.from(this.http.get(this.Url + id).map((res: Response) => res.json()));
-    }
-
-    private Url = host + folder + 'institution/';
-
-    constructor(private http: HttpClientService) {
-
     }
 
     getAll(): Observable<Institution[]> {

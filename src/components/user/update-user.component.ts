@@ -1,11 +1,11 @@
-import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
-import { Component } from "@angular/core";
-import { LiveUserService } from "services/UserService/LiveUserService";
-import { User } from "models/user";
-import { Router, ActivatedRoute } from "@angular/router";
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Component } from '@angular/core';
+import { LiveUserService } from 'services/UserService/LiveUserService';
+import { User } from 'models/user';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'update-user',
+    selector: 'app-update-user',
     templateUrl: './update-user.component.html',
     styleUrls: ['./update-user.component.css']
 })
@@ -25,7 +25,7 @@ export class UpdateUserComponent implements OnInit {
         })
     }
 
-    postUser() {  
+    postUser() {
         this.userService.put(this.model).subscribe(res => {
             console.log(res);
         });

@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { Blog } from "models/blog";
-import { LiveBlogService } from "services/BlogService/LiveBlogService";
-import { Router, ActivatedRoute, Params } from "@angular/router";
-import { Internship } from "models/Internship";
-import { LiveInternshipService } from "services/InternshipService/LiveInternshipService";
+import { Component, OnInit } from '@angular/core';
+import { Blog } from 'models/blog';
+import { LiveBlogService } from 'services/BlogService/LiveBlogService';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Internship } from 'models/Internship';
+import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
 
 @Component({
     selector: 'app-show-blog',
@@ -16,7 +16,7 @@ export class ShowBlogComponent implements OnInit {
     private blog: Blog;
     private internship: Internship;
 
-    constructor(private blogService: LiveBlogService, private internshipService: LiveInternshipService, 
+    constructor(private blogService: LiveBlogService, private internshipService: LiveInternshipService,
         private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit(): void {

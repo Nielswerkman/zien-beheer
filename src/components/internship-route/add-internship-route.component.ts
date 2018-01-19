@@ -1,13 +1,13 @@
-import { Component } from "@angular/core";
-import { OnInit } from "@angular/core";
-import { Institution } from "models/institution";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
-import { InternshipRoute } from "models/internshipRoute";
-import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
-import { Router } from "@angular/router";
+import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { InternshipRoute } from 'models/internshipRoute';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'add-internship-route',
+    selector: 'app-add-internship-route',
     templateUrl: './add-internship-route.component.html',
     styleUrls: ['./add-internship-route.component.css']
 })
@@ -15,7 +15,7 @@ export class AddInternshipRouteComponent implements OnInit {
 
     private institutions: Institution[];
 
-    model = new InternshipRoute("", null);
+    model = new InternshipRoute('', null);
     institution = null;
 
     constructor(

@@ -1,13 +1,13 @@
-import { OnInit, Component } from "@angular/core";
-import { Institution } from "models/institution";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
-import { Location } from "models/location";
-import { Router } from "@angular/router";
+import { OnInit, Component } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { Location } from 'models/location';
+import { Router } from '@angular/router';
 import { ActivatedRoute, Params} from '@angular/router'
 
 
 @Component({
-    selector: 'update-institution',
+    selector: 'app-update-institution',
     templateUrl: './update-institution.component.html',
     styleUrls: ['./update-institution.component.css']
 })
@@ -29,7 +29,7 @@ export class UpdateInstitutionComponent implements OnInit {
         })
     }
 
-    updateInstitution() {  
+    updateInstitution() {
         this.institutionService.put(this.model).subscribe(res => {
             console.log(res);
         });

@@ -17,28 +17,27 @@ export class InstitutionComponent implements OnInit {
 
   ngOnInit() {
     this.institutionService.getAll()
-    .map(insts => insts.filter(inst => inst.active === true))
-    .subscribe(res => {
-      this.institutions = res,
-      console.log(Institution);
-    })
+      .map(insts => insts.filter(inst => inst.active === true))
+      .subscribe(res => {
+        this.institutions = res,
+          console.log(Institution);
+      })
   }
 
-  goToEdit(id: number){
+  goToEdit(id: number) {
     this.route.navigate(['../institution/update/', id]);
   }
 
-  disableInstitution(id: number){
-    
+  disableInstitution(id: number) {
+
     this.updateModel = this.institutions.filter(
-      Institution => Institution.id == id,
+      Institution => Institution.id === id,
     )[0]
     this.updateModel.active = false;
     console.log(this.updateModel);
-    
+
     this.institutionService.put(this.updateModel).subscribe(res => {
       console.log(res);
-   });
-    
+    });
   }
 }

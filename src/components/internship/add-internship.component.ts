@@ -1,18 +1,18 @@
-import { OnInit } from "@angular/core/src/metadata/lifecycle_hooks";
-import { Component } from "@angular/core";
-import { Institution } from "models/institution";
-import { LiveInstitutionService } from "services/InstitutionService/LiveInstitutionService";
-import { LiveUserService } from "services/UserService/LiveUserService";
-import { Internship } from "models/Internship";
-import { User } from "models/user";
-import { Blog } from "models/blog";
-import { LiveInternshipService } from "services/InternshipService/LiveInternshipService";
-import { LiveInternshipRouteService } from "services/InternshipRouteService/LiveInternshipRouteService";
-import { InternshipRoute } from "models/internshipRoute";
-import { Router } from "@angular/router";
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import { Component } from '@angular/core';
+import { Institution } from 'models/institution';
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { LiveUserService } from 'services/UserService/LiveUserService';
+import { Internship } from 'models/Internship';
+import { User } from 'models/user';
+import { Blog } from 'models/blog';
+import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { InternshipRoute } from 'models/internshipRoute';
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'add-internship',
+    selector: 'app-add-internship',
     templateUrl: './add-internship.component.html',
     styleUrls: ['./add-internship.component.css']
 })
@@ -24,9 +24,9 @@ export class AddInternshipComponent implements OnInit {
 
     internship: Internship;
 
-    name = "";
-    type = "";
-    summary = "";
+    name = '';
+    type = '';
+    summary = '';
     dateStart = null;
     dateEnd = null;
     institution = null;
@@ -58,7 +58,7 @@ export class AddInternshipComponent implements OnInit {
 
     postInternship() {
         this.internship = new Internship();
-        this.internship.title = this.type + ": " + this.name;
+        this.internship.title = this.type + ': ' + this.name;
         this.internship.summary = this.summary;
         this.internship.startDate = this.dateStart;
         this.internship.endDate = this.dateEnd;
@@ -67,7 +67,7 @@ export class AddInternshipComponent implements OnInit {
         this.internship.semester = 5;
         this.internship.user = this.user;
 
-        let blog = new Blog();
+        const blog = new Blog();
         blog.creator = this.user;
         this.internship.blog = blog;
 

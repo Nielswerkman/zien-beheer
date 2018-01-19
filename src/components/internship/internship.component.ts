@@ -24,7 +24,7 @@ export class InternshipComponent implements OnInit {
     })
   }
 
-  goToEdit(id: number){
+  goToEdit(id: number) {
       this.route.navigate(['../internship/update/', id]);
   }
 
