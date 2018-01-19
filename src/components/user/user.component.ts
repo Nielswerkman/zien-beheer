@@ -13,13 +13,16 @@ export class UserComponent implements OnInit {
   public users: User[] = [];
   private updateModel: User;
 
-  constructor(public UserService: LiveUserService, private route: Router) {
-    UserService.getAll()
-      .map(users => users.filter(user => user.active === true))
-      .subscribe(result => this.users = result);
+  constructor(private UserService: LiveUserService, private route: Router) {
   }
 
   ngOnInit() {
+    this.UserService.getAll()
+      .map(users => users.filter(user => user.active === true))
+      .subscribe(result => {
+        this.users = result,
+        console.log(result)
+      });
   }
 
   goToEdit(id: number) {

@@ -4,28 +4,58 @@
   <p>
     Op deze pagina is een overzicht van gebruikers te zien. Hier zijn de gebruikers onderverdeeld in studenten en administrators.
   </p>
-
+  <br />
+  <h4>Studenten</h4>
   <table class="table table-striped">
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Naam</th>
-      <th>Opleiding</th>
-      <th>Email</th>
-      <th>Acties</th>
-    </tr>
+      <tr>
+        <th>ID</th>
+        <th>Naam</th>
+        <th>Opleiding</th>
+        <th>Email</th>
+        <th>Acties</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let s of this.users">
-      <td>{{s.id}}</td>
-      <td>{{s.firstName}} {{s.infix}} {{s.lastName}}</td>
-      <td>{{s.study}}</td>
-      <td>{{s.email}}</td>
-      <td>
-          <i class="fa fa-pencil" (click)="goToEdit(s.id)"></i>
-          <i class="fa fa-trash" (click)="disableUser(s.id)"></i>
-      </td>
-    </tr>
+      <tr *ngFor="let s of this.users">
+        <ng-template [ngIf]="!s.moderator">
+          <td>{{s.id}}</td>
+          <td>{{s.firstName}} {{s.infix}} {{s.lastName}}</td>
+          <td>{{s.study}}</td>
+          <td>{{s.email}}</td>
+          <td>
+            <i class="fa fa-pencil" (click)="goToEdit(s.id)"></i>
+            <i class="fa fa-trash" (click)="disableUser(s.id)"></i>
+          </td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h4>Administrators</h4>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Naam</th>
+        <th>Vak</th>
+        <th>Email</th>
+        <th>Acties</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of this.users">
+        <ng-template [ngIf]="s.moderator">
+          <td>{{s.id}}</td>
+          <td>{{s.firstName}} {{s.infix}} {{s.lastName}}</td>
+          <td>{{s.study}}</td>
+          <td>{{s.email}}</td>
+          <td>
+            <i class="fa fa-pencil" (click)="goToEdit(s.id)"></i>
+            <i class="fa fa-trash" (click)="disableUser(s.id)"></i>
+          </td>
+        </ng-template>
+      </tr>
     </tbody>
   </table>
   <a class="btn btn-primary" style="color: white;" [routerLink]="['add']">+</a>

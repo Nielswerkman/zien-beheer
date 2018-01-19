@@ -7,6 +7,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h4 {
+    margin-top: 1em;
+    color: #663366;
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #page-content {
     font-family: Arial, Helvetica, sans-serif;
     color: #524d43
