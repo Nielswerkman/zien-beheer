@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { host, folder } from 'global';
 import { Response } from '@angular/http';
-import { HttpClientService } from 'services/HttpClientService';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+
+import { host, folder } from 'global';
+
 import { Internship } from 'models/Internship';
+
+import { HttpClientService } from 'services/HttpClientService';
 import { IGenericService } from 'services/IGenericService';
-
-
 
 @Injectable()
 export class LiveInternshipService implements IGenericService<Internship> {

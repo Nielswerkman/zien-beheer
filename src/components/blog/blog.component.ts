@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Blog } from 'models/blog';
-import { LiveBlogService } from 'services/BlogService/LiveBlogService';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+
+import { Blog } from 'models/blog';
+
+import { LiveBlogService } from 'services/BlogService/LiveBlogService';
+
 
 @Component({
   selector: 'app-blog',

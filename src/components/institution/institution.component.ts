@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Institution } from 'models/institution';
-import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 import { Router } from '@angular/router';
+
+import { Institution } from 'models/institution';
+
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @Component({
   selector: 'app-institution',

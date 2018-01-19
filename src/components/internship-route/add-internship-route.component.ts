@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
-import { Institution } from 'models/institution';
-import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
-import { InternshipRoute } from 'models/internshipRoute';
-import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { Institution } from 'models/institution';
+import { InternshipRoute } from 'models/internshipRoute';
+
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
+
 
 @Component({
     selector: 'app-add-internship-route',

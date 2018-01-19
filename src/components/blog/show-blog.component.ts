@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from 'models/blog';
-import { LiveBlogService } from 'services/BlogService/LiveBlogService';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+
+import { Blog } from 'models/blog';
 import { Internship } from 'models/Internship';
+
+import { LiveBlogService } from 'services/BlogService/LiveBlogService';
 import { LiveInternshipService } from 'services/InternshipService/LiveInternshipService';
 
 @Component({

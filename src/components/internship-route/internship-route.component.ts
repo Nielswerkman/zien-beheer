@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { InternshipRoute } from 'models/internshipRoute';
-import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
 import { Router } from '@angular/router';
+
+import { InternshipRoute } from 'models/internshipRoute';
+
+import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
 
 @Component({
     selector: 'app-internship-route',

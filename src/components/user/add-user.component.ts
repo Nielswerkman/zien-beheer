@@ -1,8 +1,9 @@
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
-import { Component } from '@angular/core';
-import { LiveUserService } from 'services/UserService/LiveUserService';
-import { User } from 'models/user';
+import { OnInit, Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { User } from 'models/user';
+
+import { LiveUserService } from 'services/UserService/LiveUserService';
 
 @Component({
     selector: 'app-add-user',

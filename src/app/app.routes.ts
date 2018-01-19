@@ -1,10 +1,11 @@
-import {RouterModule, Routes} from '@angular/router';
-import {BlogComponent} from '../components/blog/blog.component';
-import {InstitutionComponent} from '../components/institution/institution.component'
-import {InternshipComponent} from '../components/internship/internship.component';
-import {UserComponent} from '../components/user/user.component';
-import {AddUserComponent} from '../components/user/add-user.component'
-import {UpdateUserComponent} from '../components/user/update-user.component'
+import { RouterModule, Routes } from '@angular/router';
+
+import { BlogComponent } from '../components/blog/blog.component';
+import { InstitutionComponent } from '../components/institution/institution.component'
+import { InternshipComponent } from '../components/internship/internship.component';
+import { UserComponent } from '../components/user/user.component';
+import { AddUserComponent } from '../components/user/add-user.component'
+import { UpdateUserComponent } from '../components/user/update-user.component'
 import { AddInternshipComponent } from 'components/internship/add-internship.component';
 import { AddInstitutionComponent } from 'components/institution/add-institution.component';
 import { UpdateInstitutionComponent } from 'components/institution/update-institution.component';

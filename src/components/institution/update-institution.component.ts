@@ -1,10 +1,10 @@
 import { OnInit, Component } from '@angular/core';
-import { Institution } from 'models/institution';
-import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
-import { Location } from 'models/location';
-import { Router } from '@angular/router';
-import { ActivatedRoute, Params} from '@angular/router'
+import { Router, ActivatedRoute, Params } from '@angular/router'
 
+import { Location } from 'models/location';
+import { Institution } from 'models/institution';
+
+import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @Component({
     selector: 'app-update-institution',

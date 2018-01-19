@@ -1,10 +1,14 @@
-import { User } from '../../models/user';
-import { Observable } from 'rxjs/Rx';
-import { host, folder } from 'global';
-import { HttpClientService } from 'services/HttpClientService';
-import { Http, Response, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+
+import { host, folder } from 'global';
+
+import { User } from 'models/user';
+
+import { HttpClientService } from 'services/HttpClientService';
 import { IUserService } from 'services/UserService/IUserService';
+
 @Injectable()
 export class LiveUserService implements IUserService {
 

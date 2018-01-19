@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { Institution } from 'models/institution';
 import { InternshipRoute } from 'models/internshipRoute';
+
 import { LiveInternshipRouteService } from 'services/InternshipRouteService/LiveInternshipRouteService';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
 import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitutionService';
 
 @Component({
