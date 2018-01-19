@@ -1,29 +1,37 @@
-<div class="container">
-  <h1 id="page-title">Instituties</h1>
-  <p>
-    Op deze pagina kunnen alle scholen beheerd worden die in het internationaliseringsproject meedraaien. Hier kunnen nieuwe
-    scholen toegevoegd worden, gegevens van scholen aangepast worden of niet meer deelenemende scholen verwijderd worden.
-  </p>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Institutie</th>
-        <th>locatie</th>
-        <th>Acties</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let institution of institutions">
-        <td>{{institution.id}}</td>
-        <td>{{institution.name}}</td>
-        <td>{{institution.city}}, {{institution.country}}</td>
-        <td>
-          <i class="fa fa-pencil" (click)="goToEdit(institution.id)"></i>
-          <i class="fa fa-trash" (click)="disableInstitution(institution.id)"></i>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <a class="btn btn-primary" style="color: white;" [routerLink]="['add']">+</a>
+<div class="row page-row">
+  <div id="sidebar-col" class="col-md-3 col-sm-4">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-9 col-sm-8">
+    <div class="container">
+      <h1 id="page-title">Instituties</h1>
+      <p>
+        Op deze pagina kunnen alle scholen beheerd worden die in het internationaliseringsproject meedraaien. Hier kunnen nieuwe
+        scholen toegevoegd worden, gegevens van scholen aangepast worden of niet meer deelenemende scholen verwijderd worden.
+      </p>
+      <br />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Institutie</th>
+            <th>locatie</th>
+            <th>Acties</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let institution of institutions">
+            <td>{{institution.id}}</td>
+            <td>{{institution.name}}</td>
+            <td>{{institution.city}}, {{institution.country}}</td>
+            <td>
+              <i class="fa fa-pencil" (click)="goToEdit(institution.id)"></i>
+              <i class="fa fa-trash" (click)="disableInstitution(institution.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="btn btn-primary" style="color: white;" [routerLink]="['add']">+</a>
+    </div>
+  </div>
 </div>

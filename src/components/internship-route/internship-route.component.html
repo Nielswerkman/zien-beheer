@@ -1,29 +1,36 @@
-<div class="container">
-    <h1 id="page-title">Studierichtingen</h1>
-    <p>
-        Op deze pagina worden alle beschikbare studierichtingen beheerd die tot de internationale
-        stages behoren.
-    </p>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Naam</th>
-                <th>Wordt gegeven bij</th>
-                <th>Acties</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let route of routes">
-                <td>{{route.id}}</td>
-                <td>{{route.name}}</td>
-                <td>{{route.institution.name}}</td>
-                <td>
-                    <i class="fa fa-pencil" (click)="goToEdit(route.id)"></i>
-                    <i class="fa fa-trash" (click)="disableInternshipRoute(route.id)"></i>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <a class="btn btn-primary" [routerLink]="['add']">+</a>
+<div class="row page-row">
+    <div id="sidebar-col" class="col-md-3 col-sm-4">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9 col-sm-8">
+        <div class="container">
+            <h1 id="page-title">Studierichtingen</h1>
+            <p>
+                Op deze pagina worden alle beschikbare studierichtingen beheerd die tot de internationale stages behoren.
+            </p>
+            <br />
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Naam</th>
+                        <th>Wordt gegeven bij</th>
+                        <th>Acties</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let route of routes">
+                        <td>{{route.id}}</td>
+                        <td>{{route.name}}</td>
+                        <td>{{route.institution.name}}</td>
+                        <td>
+                            <i class="fa fa-pencil" (click)="goToEdit(route.id)"></i>
+                            <i class="fa fa-trash" (click)="disableInternshipRoute(route.id)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="btn btn-primary" [routerLink]="['add']">+</a>
+        </div>
+    </div>
 </div>

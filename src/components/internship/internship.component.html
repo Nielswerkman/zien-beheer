@@ -1,30 +1,38 @@
-<div class="container">
-    <h1 id="page-title">Stages / Minors</h1>
-    <p>
-      Op deze pagina worden de beschikbare stages en minors beheerd. Ze staan in relatie met een institutie en 
-      kunnen op basis van instituties worden toegevoegd. Ook kunnen de stages / minors gewijzigd worden of verwijderd 
-      wanneer deze niet meer aangeboden worden.
-    </p>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Naam</th>
-          <th>Richting</th>
-          <th>Acties</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let internship of internships">
-          <td>{{internship.id}}</td>
-          <td>{{internship.title}}</td>
-          <td>{{internship.internshipRoute.name}}</td>
-          <td>
-              <i class="fa fa-pencil" (click)="goToEdit(internship.id)"></i>
-            <i class="fa fa-trash" (click)="disableInternship(internship.id)"></i>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <a class="btn btn-primary" style="color: white;" [routerLink]="['add']">+</a>
+<div class="row page-row">
+  <div id="sidebar-col" class="col-md-3 col-sm-4">
+    <app-sidebar></app-sidebar>
   </div>
+  <div class="col-md-9 col-sm-8">
+    <div class="container">
+      <h1 id="page-title">Stages / Minors</h1>
+      <p>
+        Op deze pagina worden de beschikbare stages en minors beheerd. Ze staan in relatie met een institutie en kunnen op basis
+        van instituties worden toegevoegd. Ook kunnen de stages / minors gewijzigd worden of verwijderd wanneer deze niet
+        meer aangeboden worden.
+      </p>
+      <br />
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Naam</th>
+            <th>Richting</th>
+            <th>Acties</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let internship of internships">
+            <td>{{internship.id}}</td>
+            <td>{{internship.title}}</td>
+            <td>{{internship.internshipRoute.name}}</td>
+            <td>
+              <i class="fa fa-pencil" (click)="goToEdit(internship.id)"></i>
+              <i class="fa fa-trash" (click)="disableInternship(internship.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a class="btn btn-primary" style="color: white;" [routerLink]="['add']">+</a>
+    </div>
+  </div>
+</div>
