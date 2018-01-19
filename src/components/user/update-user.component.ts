@@ -7,8 +7,7 @@ import { LiveUserService } from 'services/UserService/LiveUserService';
 
 @Component({
     selector: 'app-update-user',
-    templateUrl: './update-user.component.html',
-    styleUrls: ['./update-user.component.css']
+    templateUrl: './update-user.component.html'
 })
 export class UpdateUserComponent implements OnInit {
 

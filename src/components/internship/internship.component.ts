@@ -7,8 +7,7 @@ import { LiveInternshipService } from 'services/InternshipService/LiveInternship
 
 @Component({
   selector: 'app-internship',
-  templateUrl: './internship.component.html',
-  styleUrls: ['./internship.component.css']
+  templateUrl: './internship.component.html'
 })
 export class InternshipComponent implements OnInit {
 

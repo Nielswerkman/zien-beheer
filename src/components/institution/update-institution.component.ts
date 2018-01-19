@@ -8,8 +8,7 @@ import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitut
 
 @Component({
     selector: 'app-update-institution',
-    templateUrl: './update-institution.component.html',
-    styleUrls: ['./update-institution.component.css']
+    templateUrl: './update-institution.component.html'
 })
 export class UpdateInstitutionComponent implements OnInit {
 

@@ -7,8 +7,7 @@ import { LiveUserService } from 'services/UserService/LiveUserService';
 
 @Component({
     selector: 'app-add-user',
-    templateUrl: './add-user.component.html',
-    styleUrls: ['./add-user.component.css']
+    templateUrl: './add-user.component.html'
 })
 export class AddUserComponent implements OnInit {
 

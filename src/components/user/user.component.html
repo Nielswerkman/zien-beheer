@@ -13,7 +13,6 @@
       <th>Opleiding</th>
       <th>Email</th>
       <th>Acties</th>
-      <th></th>
     </tr>
     </thead>
     <tbody>
@@ -24,8 +23,6 @@
       <td>{{s.email}}</td>
       <td>
           <i class="fa fa-pencil" (click)="goToEdit(s.id)"></i>
-      </td>
-      <td>
           <i class="fa fa-trash" (click)="disableUser(s.id)"></i>
       </td>
     </tr>

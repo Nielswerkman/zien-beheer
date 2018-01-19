@@ -9,8 +9,7 @@ import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitut
 
 @Component({
     selector: 'app-update-internship-route',
-    templateUrl: './update-internship-route.component.html',
-    styleUrls: ['./update-internship-route.component.css']
+    templateUrl: './update-internship-route.component.html'
 })
 export class UpdateInternshipRouteComponent implements OnInit {
 

@@ -14,8 +14,7 @@ import { LiveInternshipRouteService } from 'services/InternshipRouteService/Live
 
 @Component({
     selector: 'app-update-internship',
-    templateUrl: './update-internship.component.html',
-    styleUrls: ['./update-internship.component.css']
+    templateUrl: './update-internship.component.html'
 })
 export class UpdateInternshipComponent implements OnInit {
 
