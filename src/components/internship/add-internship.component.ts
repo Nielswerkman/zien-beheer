@@ -47,7 +47,7 @@ export class AddInternshipComponent implements OnInit {
             })
 
         this.userService.getAll()
-            .map(users => users.filter(user => user.active === true))
+            .map(users => users.filter(user => user.active === true && user.moderator === false))
             .subscribe(res => {
                 this.users = res;
             })

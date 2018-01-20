@@ -23,9 +23,11 @@ export class BlogComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.blogService.getAll()
-      .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false))
+      .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false
+        && (blog.content !== null && blog.title !== null)))
       .subscribe(res => {
-        this.blogs = res
+        this.blogs = res;
+        console.log(res);
       });
   }
 

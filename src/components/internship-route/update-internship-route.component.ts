@@ -36,10 +36,12 @@ export class UpdateInternshipRouteComponent implements OnInit {
         }
         this.id = this.route.snapshot.params['id'];
 
-        this.institutionService.getAll().subscribe(res => {
-            this.institutions = res;
-            this.instLoaded = true;
-        })
+        this.institutionService.getAll()
+            .map(insts => insts.filter(inst => inst.active === true))
+            .subscribe(res => {
+                this.institutions = res;
+                this.instLoaded = true;
+            })
 
         this.internshipRouteService.get(this.id).subscribe(res => {
             this.model = res;
