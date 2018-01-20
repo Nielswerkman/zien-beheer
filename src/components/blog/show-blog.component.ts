@@ -19,9 +19,12 @@ export class ShowBlogComponent implements OnInit {
     private internship: Internship;
 
     constructor(private blogService: LiveBlogService, private internshipService: LiveInternshipService,
-        private router: Router, private route: ActivatedRoute) {}
+        private router: Router, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.id = this.route.snapshot.params['id'];
 
         this.blogService.get(this.id).subscribe(res => {

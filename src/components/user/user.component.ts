@@ -13,20 +13,22 @@ export class UserComponent implements OnInit {
   public users: User[] = [];
   private updateModel: User;
 
-  constructor(private UserService: LiveUserService, private route: Router) {
+  constructor(private UserService: LiveUserService, private router: Router) {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('currentUser') === 'null') {
+      this.router.navigate(['/login'])
+    }
     this.UserService.getAll()
       .map(users => users.filter(user => user.active === true))
       .subscribe(result => {
-        this.users = result,
-        console.log(result)
+        this.users = result
       });
   }
 
   goToEdit(id: number) {
-    this.route.navigate(['../user/update/', id]);
+    this.router.navigate(['../user/update/', id]);
   }
 
   disableUser(id: number) {

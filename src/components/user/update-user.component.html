@@ -3,41 +3,43 @@
         <app-sidebar></app-sidebar>
     </div>
     <div class="col-md-9 col-sm-8">
-        <div class="container">
-            <h1 id="page-title">Gebruiker toevoegen</h1>
-            <form (ngSubmit)="postUser()">
-                <div class="form-group">
-                    <label for="first-name">Voornaam</label>
-                    <input [(ngModel)]="model.firstName" type="text" name="firstName" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="infix">Tussenvoegsel</label>
-                    <input [(ngModel)]="model.infix" type="text" name="infix" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="last-name">Achternaam</label>
-                    <input [(ngModel)]="model.lastName" type="text" name="lastName" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input [(ngModel)]="model.password" type="password" name="password" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label for="study">Studie</label>
-                    <input [(ngModel)]="model.study" type="text" name="study" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="email">Emailadres</label>
-                    <input [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="naam@student.fontys.nl" />
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input [(ngModel)]="model.isModerator" name="isModerator" type="checkbox" class="form-check-input" /> Administrator
-                    </label>
-                </div>
-                <br />
-                <button type="submit" class="btn btn-primary">Bevestigen</button>
-            </form>
+        <div *ngIf="dataLoaded">
+            <div class="container">
+                <h1 id="page-title">Gebruiker toevoegen</h1>
+                <form (ngSubmit)="postUser()">
+                    <div class="form-group">
+                        <label for="first-name">Voornaam</label>
+                        <input [(ngModel)]="model.firstName" type="text" name="firstName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="infix">Tussenvoegsel</label>
+                        <input [(ngModel)]="model.infix" type="text" name="infix" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Achternaam</label>
+                        <input [(ngModel)]="model.lastName" type="text" name="lastName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input [(ngModel)]="model.password" type="password" name="password" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="study">Studie</label>
+                        <input [(ngModel)]="model.study" type="text" name="study" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Emailadres</label>
+                        <input [(ngModel)]="model.email" type="email" name="email" class="form-control" placeholder="naam@student.fontys.nl" />
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input [(ngModel)]="model.isModerator" name="isModerator" type="checkbox" class="form-check-input" /> Administrator
+                        </label>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Bevestigen</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

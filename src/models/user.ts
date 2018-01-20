@@ -7,7 +7,7 @@ export class User {
   password: String;
   study: String;
   active: Boolean;
-  isModerator: Boolean;
+  moderator: Boolean;
 
   constructor(id?: number, firstName?: String, infix?: String, lastName?: String, email?: String, password?: String,
               study?: String, active?: Boolean, moderator?: Boolean) {
@@ -19,6 +19,6 @@ export class User {
     this.password = password;
     this.study = study;
     this.active = active;
-    this.isModerator = moderator;
+    this.moderator = moderator;
   }
 }

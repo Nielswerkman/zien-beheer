@@ -21,9 +21,13 @@ export class UpdateInternshipComponent implements OnInit {
     private institutions: Institution[];
     private users: User[];
     private routes: InternshipRoute[];
-    dataLoaded: Boolean = false;
 
     private id: number;
+
+    modelLoaded = false;
+    instLoaded = false;
+    userLoaded = false;
+    routeLoaded = false;
 
     model: Internship;
     textModel: Internship;
@@ -33,9 +37,13 @@ export class UpdateInternshipComponent implements OnInit {
 
     constructor(private internshipService: LiveInternshipService, private institutionService: LiveInstitutionService,
         private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router,
-        private route: ActivatedRoute) {}
+        private route: ActivatedRoute) { }
 
     ngOnInit() {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
+
         this.id = this.route.snapshot.params['id'];
 
         this.internshipService.get(this.id).subscribe(res => {
@@ -54,36 +62,41 @@ export class UpdateInternshipComponent implements OnInit {
             this.textModel.user.infix = res.user.infix;
             this.textModel.user.lastName = res.user.lastName;
 
-            this.dataLoaded = true;
-
+            this.modelLoaded = true;
         })
 
         this.institutionService.getAll()
-        .map(insts => insts.filter(inst => inst.active === true))
-        .subscribe(res => {
-            this.institutions = res;
-        })
+            .map(insts => insts.filter(inst => inst.active === true))
+            .subscribe(res => {
+                this.institutions = res;
+                this.instLoaded = true;
+            })
 
         this.userService.getAll()
-        .map(users => users.filter(user => user.active === true))
-        .subscribe(res => {
-            this.users = res;
-        })
+            .map(users => users.filter(user => user.active === true))
+            .subscribe(res => {
+                this.users = res;
+                this.userLoaded = true;
+            })
 
         this.routeService.getAll()
-        .map(routes => routes.filter(route => route.active === true))
-        .subscribe(res => {
-            this.routes = res;
-        })
-
-
-
-
-
+            .map(routes => routes.filter(route => route.active === true))
+            .subscribe(res => {
+                this.routes = res;
+                this.routeLoaded = true;
+            })
     }
 
     updateInternship() {
         this.internshipService.put(this.model).subscribe()
         this.router.navigate(['internship']);
+    }
+
+    allDataLoaded() {
+        if (this.modelLoaded && this.instLoaded && this.userLoaded && this.routeLoaded) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

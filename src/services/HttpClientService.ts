@@ -32,10 +32,10 @@ export class HttpClientService {
         return this.http.put(url, body, {headers: headers});
     }
 
-    login(url) {
+    login(url, body) {
         const headers = new Headers();
         this.authorize(headers);
 
-        return this.http.post(url, {headers: headers});
+        return this.http.post(url, body, {headers: headers});
     }
 }

@@ -14,27 +14,30 @@ export class InternshipComponent implements OnInit {
   private internships: Internship[];
   private updateModel: Internship;
 
-  constructor(private internshipService: LiveInternshipService, private route: Router) { }
+  constructor(private internshipService: LiveInternshipService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('currentUser') === 'null') {
+      this.router.navigate(['/login'])
+    }
     this.internshipService.getAll()
-    .map(interns => interns.filter(intern => intern.active === true))
-    .subscribe(res => {
-      this.internships = res;
-    });
+      .map(interns => interns.filter(intern => intern.active === true))
+      .subscribe(res => {
+        this.internships = res;
+      });
   }
 
   goToEdit(id: number) {
-      this.route.navigate(['../internship/update/', id]);
+    this.router.navigate(['../internship/update/', id]);
   }
 
   disableInternship(id: number) {
-      this.updateModel = this.internships.filter(
-        intern => intern.id === id
-      )[0];
-      this.updateModel.active = false;
+    this.updateModel = this.internships.filter(
+      intern => intern.id === id
+    )[0];
+    this.updateModel.active = false;
 
-      this.internshipService.put(this.updateModel).subscribe();
+    this.internshipService.put(this.updateModel).subscribe();
   }
 
 }

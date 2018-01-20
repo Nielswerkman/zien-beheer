@@ -14,10 +14,12 @@ import { AddInternshipRouteComponent } from 'components/internship-route/add-int
 import { ShowBlogComponent } from 'components/blog/show-blog.component';
 import { UpdateInternshipRouteComponent } from 'components/internship-route/update-internship-route.component';
 import { UpdateInternshipComponent } from 'components/internship/update-internship.component';
+import { LoginComponent } from 'components/login/login.component';
 
 
 const APP_ROUTES: Routes = [
   {path: '', component: BlogComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'blog/show/:id', component: ShowBlogComponent},
   {path: 'institution', component: InstitutionComponent},

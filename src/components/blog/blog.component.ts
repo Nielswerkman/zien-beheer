@@ -19,11 +19,14 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: LiveBlogService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('currentUser') === 'null') {
+      this.router.navigate(['/login'])
+    }
     this.blogService.getAll()
-    .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false))
-    .subscribe(res => {
-      this.blogs = res
-    })
+      .map(blogs => blogs.filter(blog => blog.accepted === false && blog.rejected === false))
+      .subscribe(res => {
+        this.blogs = res
+      });
   }
 
   rejectBlog(id: number) {

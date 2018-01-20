@@ -14,9 +14,12 @@ export class InstitutionComponent implements OnInit {
   private institutions: Institution[];
   private updateModel: Institution;
 
-  constructor(private institutionService: LiveInstitutionService, private route: Router) { }
+  constructor(private institutionService: LiveInstitutionService, private router: Router) { }
 
   ngOnInit() {
+    if (localStorage.getItem('currentUser') === 'null') {
+      this.router.navigate(['/login'])
+    }
     this.institutionService.getAll()
       .map(insts => insts.filter(inst => inst.active === true))
       .subscribe(res => {
@@ -25,7 +28,7 @@ export class InstitutionComponent implements OnInit {
   }
 
   goToEdit(id: number) {
-    this.route.navigate(['../institution/update/', id]);
+    this.router.navigate(['../institution/update/', id]);
   }
 
   disableInstitution(id: number) {

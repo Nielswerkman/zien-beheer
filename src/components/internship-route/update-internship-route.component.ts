@@ -15,6 +15,9 @@ export class UpdateInternshipRouteComponent implements OnInit {
 
     private institutions: Institution[];
 
+    instLoaded = false;
+    modelLoaded = false;
+
     id: number;
     oldModel: InternshipRoute;
     model: InternshipRoute;
@@ -28,16 +31,21 @@ export class UpdateInternshipRouteComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.id = this.route.snapshot.params['id'];
 
         this.institutionService.getAll().subscribe(res => {
-            this.institutions = res
+            this.institutions = res;
+            this.instLoaded = true;
         })
 
         this.internshipRouteService.get(this.id).subscribe(res => {
-            this.model = res,
+            this.model = res;
             this.oldModel = new InternshipRoute();
             this.oldModel.institution = res.institution;
+            this.modelLoaded = true;
         })
     }
 

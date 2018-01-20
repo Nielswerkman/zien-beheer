@@ -12,6 +12,8 @@ import { LiveInstitutionService } from 'services/InstitutionService/LiveInstitut
 })
 export class UpdateInstitutionComponent implements OnInit {
 
+    dataLoaded = false;
+
     id: number;
 
     model: any;
@@ -21,10 +23,14 @@ export class UpdateInstitutionComponent implements OnInit {
     }
 
     ngOnInit() {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.id = this.route.snapshot.params['id'];
 
         this.institutionService.get(this.id).subscribe(res => {
             this.model = res;
+            this.dataLoaded = true;
         })
     }
 

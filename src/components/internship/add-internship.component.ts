@@ -34,26 +34,29 @@ export class AddInternshipComponent implements OnInit {
     route = null;
 
     constructor(private internshipService: LiveInternshipService, private institutionService: LiveInstitutionService,
-        private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router) {}
+        private userService: LiveUserService, private routeService: LiveInternshipRouteService, private router: Router) { }
 
     ngOnInit() {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.institutionService.getAll()
-        .map(insts => insts.filter(inst => inst.active === true))
-        .subscribe(res => {
-            this.institutions = res;
-        })
+            .map(insts => insts.filter(inst => inst.active === true))
+            .subscribe(res => {
+                this.institutions = res;
+            })
 
         this.userService.getAll()
-        .map(users => users.filter(user => user.active === true))
-        .subscribe(res => {
-            this.users = res;
-        })
+            .map(users => users.filter(user => user.active === true))
+            .subscribe(res => {
+                this.users = res;
+            })
 
         this.routeService.getAll()
-        .map(routes => routes.filter(route => route.active === true))
-        .subscribe(res => {
-            this.routes = res;
-        })
+            .map(routes => routes.filter(route => route.active === true))
+            .subscribe(res => {
+                this.routes = res;
+            })
     }
 
     postInternship() {

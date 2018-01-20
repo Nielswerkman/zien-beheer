@@ -17,8 +17,8 @@ export class LiveUserService implements IUserService {
     constructor(private http: HttpClientService) {
     }
 
-    login(username: string, password: string): Observable<User> {
-        return Observable.from(this.http.login(this.Url + username + password).map((res: Response) => res.json()));
+    login(email: String, password: String): Observable<User> {
+        return Observable.from(this.http.login(this.Url + 'login/', { email, password }).map((res: Response) => res.json()));
     }
 
     post(object: User) {

@@ -19,7 +19,9 @@ export class AddInstitutionComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
     }
 
     postInstitution() {

@@ -23,14 +23,17 @@ export class AddInternshipRouteComponent implements OnInit {
         private institutionService: LiveInstitutionService,
         private internshipRouteService: LiveInternshipRouteService,
         private router: Router
-    ) {}
+    ) { }
 
     ngOnInit(): void {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.institutionService.getAll()
-        .map(insts => insts.filter(inst => inst.active === true))
-        .subscribe(res => {
-            this.institutions = res;
-        })
+            .map(insts => insts.filter(inst => inst.active === true))
+            .subscribe(res => {
+                this.institutions = res;
+            })
     }
 
     postInternshipRoute() {

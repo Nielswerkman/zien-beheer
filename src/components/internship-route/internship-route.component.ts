@@ -15,9 +15,12 @@ export class InternshipRouteComponent implements OnInit {
     private routes: InternshipRoute[];
     private updateModel: InternshipRoute;
 
-    constructor(private routeService: LiveInternshipRouteService, private route: Router) { }
+    constructor(private routeService: LiveInternshipRouteService, private router: Router) { }
 
     ngOnInit() {
+        if (localStorage.getItem('currentUser') === 'null') {
+            this.router.navigate(['/login'])
+        }
         this.routeService.getAll()
             .map(routes => routes.filter(route => route.active === true))
             .subscribe(res => {
@@ -26,7 +29,7 @@ export class InternshipRouteComponent implements OnInit {
     }
 
     goToEdit(id: number) {
-        this.route.navigate(['../internshiproute/update/', id]);
+        this.router.navigate(['../internshiproute/update/', id]);
     }
 
     disableInternshipRoute(id: number) {

@@ -3,7 +3,7 @@
         <app-sidebar></app-sidebar>
     </div>
     <div class="col-md-9 col-sm-8">
-        <div *ngIf="dataLoaded">
+        <div *ngIf="allDataLoaded()">
             <div class="container">
                 <h1 id="page-title">Update stage of minor</h1>
                 <form (ngSubmit)="updateInternship()">
