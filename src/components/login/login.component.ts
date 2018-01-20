@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('currentUser', JSON.stringify(this.user));
         this.router.navigate(['/']);
       } else {
-        alert('Deze gebruiker is geen administrator.');
+        alert(this.user.firstName + ' ' + this.user.infix + ' ' + this.user.lastName + ' is geen administrator.');
       }
     },
       err => alert('Gebruiker niet gevonden, mogelijk is de email of het wachtwoord verkeerd.')
