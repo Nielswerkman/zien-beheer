@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
       } else {
         alert('Deze gebruiker is geen administrator.');
       }
-    });
+    },
+      err => alert('Gebruiker niet gevonden, mogelijk is de email of het wachtwoord verkeerd.')
+    );
   }
 }
