@@ -36,7 +36,9 @@ export class BlogComponent implements OnInit {
     )[0]
     this.updateModel.rejected = true;
 
-    this.blogService.put(this.updateModel).subscribe();
+    this.blogService.put(this.updateModel).subscribe(
+      () => window.location.reload()
+    );
 
   }
 
@@ -47,7 +49,9 @@ export class BlogComponent implements OnInit {
     )[0]
     this.updateModel.accepted = true;
 
-    this.blogService.put(this.updateModel).subscribe();
+    this.blogService.put(this.updateModel).subscribe(
+      () => window.location.reload()
+    );
 
   }
 

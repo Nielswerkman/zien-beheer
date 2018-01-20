@@ -37,7 +37,9 @@ export class InternshipComponent implements OnInit {
     )[0];
     this.updateModel.active = false;
 
-    this.internshipService.put(this.updateModel).subscribe();
+    this.internshipService.put(this.updateModel).subscribe(
+      () => window.location.reload()
+    );
   }
 
 }

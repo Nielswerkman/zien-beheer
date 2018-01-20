@@ -32,8 +32,9 @@ export class UpdateUserComponent implements OnInit {
     }
 
     postUser() {
-        this.userService.put(this.model).subscribe();
-        this.router.navigate(['user'])
+        this.userService.put(this.model).subscribe(
+            () => this.router.navigate(['/user'])
+        );
     }
 
 }

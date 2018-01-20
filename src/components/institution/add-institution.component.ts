@@ -25,7 +25,8 @@ export class AddInstitutionComponent implements OnInit {
     }
 
     postInstitution() {
-        this.institutionService.post(this.model).subscribe();
-        this.router.navigate(['institution'])
+        this.institutionService.post(this.model).subscribe(
+            () => this.router.navigate(['institution'])
+        );
     }
 }

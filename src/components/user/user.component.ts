@@ -37,6 +37,8 @@ export class UserComponent implements OnInit {
     )[0]
     this.updateModel.active = false;
 
-    this.UserService.put(this.updateModel).subscribe();
+    this.UserService.put(this.updateModel).subscribe(
+      () => window.location.reload()
+    );
   }
 }

@@ -38,6 +38,8 @@ export class InternshipRouteComponent implements OnInit {
         )[0]
         this.updateModel.active = false;
 
-        this.routeService.put(this.updateModel).subscribe();
+        this.routeService.put(this.updateModel).subscribe(
+            () => window.location.reload()
+        );
     }
 }

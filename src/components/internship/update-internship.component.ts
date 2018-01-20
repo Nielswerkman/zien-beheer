@@ -88,8 +88,9 @@ export class UpdateInternshipComponent implements OnInit {
     }
 
     updateInternship() {
-        this.internshipService.put(this.model).subscribe()
-        this.router.navigate(['internship']);
+        this.internshipService.put(this.model).subscribe(
+            () => this.router.navigate(['internship'])
+        )
     }
 
     allDataLoaded() {

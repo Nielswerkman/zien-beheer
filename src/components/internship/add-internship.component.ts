@@ -74,7 +74,8 @@ export class AddInternshipComponent implements OnInit {
         blog.creator = this.user;
         this.internship.blog = blog;
 
-        this.internshipService.post(this.internship).subscribe()
-        this.router.navigate(['internship']);
+        this.internshipService.post(this.internship).subscribe(
+            () => this.router.navigate(['internship'])
+        )
     }
 }
