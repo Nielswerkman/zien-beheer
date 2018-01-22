@@ -29,6 +29,7 @@ export class UpdateInternshipComponent implements OnInit {
     userLoaded = false;
     routeLoaded = false;
 
+    type: string;
     model: Internship;
     textModel: Internship;
 
@@ -49,7 +50,7 @@ export class UpdateInternshipComponent implements OnInit {
         this.internshipService.get(this.id).subscribe(res => {
             this.model = res,
 
-            this.textModel = new Internship(null, null, null, null, null, null, null, null, null, null, null);
+                this.textModel = new Internship(null, null, null, null, null, null, null, null, null, null, null);
             this.textModel.internshipRoute = res.internshipRoute;
             this.textModel.internshipRoute.name = res.internshipRoute.name;
             this.textModel.startDate = res.startDate;
@@ -88,6 +89,10 @@ export class UpdateInternshipComponent implements OnInit {
     }
 
     updateInternship() {
+        if (this.type !== undefined) {
+            this.model.title = this.type + ': ' + this.model.title;
+        }
+
         this.internshipService.put(this.model).subscribe(
             () => this.router.navigate(['internship'])
         )

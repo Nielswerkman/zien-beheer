@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group">
                         <label for="type">Soort: {{textModel.title}}</label>
-                        <select [(ngModel)]="model.title" name="type" id="type" class="form-control" required>
+                        <select [(ngModel)]="type" name="type" id="type" class="form-control" required>
                             <option>Meeloopstage</option>
                             <option>Afstudeerstage</option>
                             <option>Minor</option>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label for="route">Studieroute: {{textModel.internshipRoute.name}}</label>
-                        <select [(ngModel)]="model.internshipRoute.name" name="route" id="route" class="form-control" required>
+                        <select [(ngModel)]="model.internshipRoute" name="route" id="route" class="form-control" required>
                             <option *ngFor="let route of routes" [ngValue]="route">{{route.name}}</option>
                         </select>
                     </div>
