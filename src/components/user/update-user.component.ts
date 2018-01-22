@@ -20,7 +20,7 @@ export class UpdateUserComponent implements OnInit {
     constructor(private userService: LiveUserService, private router: Router, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        if (localStorage.getItem('currentUser') === 'null') {
+        if (localStorage.getItem('currentAdmin') === 'null') {
             this.router.navigate(['/login'])
         }
         this.id = this.route.snapshot.params['id'];

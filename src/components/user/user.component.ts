@@ -17,7 +17,7 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (localStorage.getItem('currentUser') === 'null') {
+    if (localStorage.getItem('currentAdmin') === 'null') {
       this.router.navigate(['/login'])
     }
     this.UserService.getAll()

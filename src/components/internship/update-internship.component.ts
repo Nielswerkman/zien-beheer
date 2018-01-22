@@ -41,7 +41,7 @@ export class UpdateInternshipComponent implements OnInit {
         private route: ActivatedRoute) { }
 
     ngOnInit() {
-        if (localStorage.getItem('currentUser') === 'null') {
+        if (localStorage.getItem('currentAdmin') === 'null') {
             this.router.navigate(['/login'])
         }
 

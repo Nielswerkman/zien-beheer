@@ -17,7 +17,7 @@ export class InstitutionComponent implements OnInit {
   constructor(private institutionService: LiveInstitutionService, private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('currentUser') === 'null') {
+    if (localStorage.getItem('currentAdmin') === 'null') {
       this.router.navigate(['/login'])
     }
     this.institutionService.getAll()

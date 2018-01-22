@@ -26,7 +26,7 @@ export class AddInternshipRouteComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        if (localStorage.getItem('currentUser') === 'null') {
+        if (localStorage.getItem('currentAdmin') === 'null') {
             this.router.navigate(['/login'])
         }
         this.institutionService.getAll()

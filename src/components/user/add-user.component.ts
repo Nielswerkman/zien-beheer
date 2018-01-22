@@ -16,7 +16,7 @@ export class AddUserComponent implements OnInit {
     constructor(private userService: LiveUserService, private router: Router) { }
 
     ngOnInit() {
-        if (localStorage.getItem('currentUser') === 'null') {
+        if (localStorage.getItem('currentAdmin') === 'null') {
             this.router.navigate(['/login'])
         }
     }

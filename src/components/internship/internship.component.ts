@@ -17,7 +17,7 @@ export class InternshipComponent implements OnInit {
   constructor(private internshipService: LiveInternshipService, private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('currentUser') === 'null') {
+    if (localStorage.getItem('currentAdmin') === 'null') {
       this.router.navigate(['/login'])
     }
     this.internshipService.getAll()

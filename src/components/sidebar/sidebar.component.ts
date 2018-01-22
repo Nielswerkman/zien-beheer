@@ -10,16 +10,16 @@ import { User } from 'models/user';
 })
 export class SidebarComponent implements OnInit {
 
-  currentUser: User;
+  currentAdmin: User;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentAdmin = JSON.parse(localStorage.getItem('currentAdmin'));
   }
 
   logoutUser() {
-    localStorage.setItem('currentUser', null);
+    localStorage.setItem('currentAdmin', null);
     this.router.navigate(['/login']);
   }
 }

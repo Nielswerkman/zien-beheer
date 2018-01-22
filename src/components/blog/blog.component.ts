@@ -19,7 +19,7 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: LiveBlogService, private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('currentUser') === 'null') {
+    if (localStorage.getItem('currentAdmin') === 'null') {
       this.router.navigate(['/login'])
     }
     this.blogService.getAll()

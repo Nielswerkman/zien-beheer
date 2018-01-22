@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       this.user = res;
       console.log(this.user);
       if (this.user.moderator === true) {
-        localStorage.setItem('currentUser', JSON.stringify(this.user));
+        localStorage.setItem('currentAdmin', JSON.stringify(this.user));
         this.router.navigate(['/']);
       } else {
         alert(this.user.firstName + ' ' + this.user.infix + ' ' + this.user.lastName + ' is geen administrator.');

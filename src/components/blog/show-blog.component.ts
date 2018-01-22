@@ -22,7 +22,7 @@ export class ShowBlogComponent implements OnInit {
         private router: Router, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
-        if (localStorage.getItem('currentUser') === 'null') {
+        if (localStorage.getItem('currentAdmin') === 'null') {
             this.router.navigate(['/login'])
         }
         this.id = this.route.snapshot.params['id'];
