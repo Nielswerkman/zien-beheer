@@ -29,7 +29,7 @@
             <td>{{blog.id}}</td>
             <td>{{blog.creator.firstName + ' ' + blog.creator.infix + ' ' + blog.creator.lastName}}</td>
             <td>{{blog.title}}</td>
-            <td>{{blog.date}}</td>
+            <td>{{blog.date | date: longDate}}</td>
             <td>
               <i class="fa fa-check" (click)="acceptBlog(blog.id)"></i>
               <i class="fa fa-times" (click)="rejectBlog(blog.id)"></i>
